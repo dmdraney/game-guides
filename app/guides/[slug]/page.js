@@ -12,7 +12,8 @@ export async function generateStaticParams() {
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }) {
-  const guide = getGuideBySlug(params.slug);
+  const resolvedParams = await params;  // ← Add await here
+  const guide = getGuideBySlug(resolvedParams.slug);
   
   if (!guide) return {};
 
@@ -27,8 +28,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function GuidePage({ params }) {
-  const guide = getGuideBySlug(params.slug);
+export default async function GuidePage({ params }) {  // ← Add async here
+  const resolvedParams = await params;  // ← Add await here
+  const guide = getGuideBySlug(resolvedParams.slug);
 
   if (!guide) {
     notFound();
