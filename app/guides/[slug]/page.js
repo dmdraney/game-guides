@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }) {
-  const resolvedParams = await params;  // ← Add await here
+  const resolvedParams = await params;
   const guide = getGuideBySlug(resolvedParams.slug);
   
   if (!guide) return {};
@@ -28,8 +28,8 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function GuidePage({ params }) {  // ← Add async here
-  const resolvedParams = await params;  // ← Add await here
+export default async function GuidePage({ params }) {
+  const resolvedParams = await params;
   const guide = getGuideBySlug(resolvedParams.slug);
 
   if (!guide) {
