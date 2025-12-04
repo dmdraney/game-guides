@@ -10,34 +10,34 @@ export default function HomePage() {
   return (
     <div style={{ 
       minHeight: '100vh', 
-      background: 'linear-gradient(to bottom, #0f172a 0%, #1e293b 100%)',
+      background: '#343434',
     }}>
       {/* Hero Section */}
       <div style={{
-        background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%)',
-        padding: '4rem 2rem',
+        background: '#343434',
         textAlign: 'center',
-        borderBottom: '4px solid rgba(255,255,255,0.1)'
+        // borderBottom: '4px solid rgba(255,255,255,0.1)'
       }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h1 style={{ 
-            fontSize: '3.5rem', 
-            fontWeight: 'bold', 
-            margin: '0 0 1rem 0',
-            color: 'white',
-            textShadow: '0 2px 10px rgba(0,0,0,0.3)'
-          }}>
-            🎮 Game Guides Hub
-          </h1>
+          <img 
+            src="/images/logo_wide.png" 
+            alt="Game Guides Hub"
+            style={{ 
+              maxWidth: '400px',
+              width: '100%',
+              height: 'auto',
+              margin: '0 auto 0 auto',
+              display: 'block'
+            }}
+          />
           <p style={{ 
-            fontSize: '1.25rem', 
+            fontSize: 'clamp(1rem, 3vw, 1.25rem)', 
             opacity: 0.95,
             color: 'white',
             lineHeight: 1.6,
-            margin: 0
+            margin: '0rem auto 2rem auto'
           }}>
-            Interactive walkthroughs with progress tracking. Master every quest, 
-            easter egg, and challenge with our step-by-step guides.
+            Interactive walkthroughs with progress tracking.
           </p>
         </div>
       </div>
@@ -46,14 +46,14 @@ export default function HomePage() {
       <div style={{
         maxWidth: '1200px',
         margin: '-2rem auto 0',
-        padding: '0 2rem',
+        padding: '0 1rem',
       }}>
         <div style={{
-          background: '#1e293b',
+          background: '#2a2a2a',
           borderRadius: '1rem',
           padding: '2rem',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
           gap: '2rem',
           boxShadow: '0 10px 40px rgba(0,0,0,0.3)',
           border: '1px solid rgba(255,255,255,0.1)'
@@ -64,7 +64,7 @@ export default function HomePage() {
               {guides.length}
             </div>
             <div style={{ fontSize: '0.875rem', color: '#94a3b8' }}>
-              Guides Available
+              Guide(s) Available
             </div>
           </div>
           <div style={{ textAlign: 'center' }}>
@@ -97,12 +97,12 @@ export default function HomePage() {
           color: 'white',
           textAlign: 'center'
         }}>
-          Choose Your Adventure
+          Guides
         </h2>
 
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
           gap: '2rem' 
         }}>
           {guides.map((guide) => (
@@ -113,7 +113,7 @@ export default function HomePage() {
             >
               <div 
                 style={{
-                  background: '#1e293b',
+                  background: '#2a2a2a',
                   borderRadius: '1rem',
                   overflow: 'hidden',
                   cursor: 'pointer',
@@ -185,7 +185,7 @@ export default function HomePage() {
                     lineHeight: 1.6,
                     marginBottom: '1rem',
                     flex: 1,
-                    color: '#cbd5e1'
+                    color: '#949494'
                   }}>
                     {guide.description}
                   </p>
@@ -282,17 +282,17 @@ export default function HomePage() {
 
       {/* Footer */}
       <div style={{
-        background: '#0f172a',
+        background: '#1a1a1a',
         borderTop: '1px solid rgba(255,255,255,0.1)',
         padding: '3rem 2rem',
         textAlign: 'center',
         color: '#94a3b8'
       }}>
         <p style={{ margin: '0 0 0.5rem 0' }}>
-          Made with ❤️ for gamers
+          For the ❤️ of the game
         </p>
         <p style={{ margin: 0, fontSize: '0.875rem', opacity: 0.7 }}>
-          © 2024 Game Guides Hub. Track your progress, master every quest.
+          © 2025 Game Guides
         </p>
       </div>
     </div>

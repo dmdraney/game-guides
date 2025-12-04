@@ -1,22 +1,22 @@
 export default {
   // Basic Info
   slug: 'bo7-zombies-easter-egg',
-  title: 'Black Ops 7 Zombies Easter Egg',
+  title: 'Black Ops 7 Zombies: Ashes of the Damned',
   subtitle: 'Complete Walkthrough',
   description: 'Step-by-step guide to completing the main easter egg quest with all secrets revealed',
   
   // Visual Customization
-  image: '🧟',  // Emoji icon for card
-  coverImage: null,  // Optional: URL to cover image (e.g., '/images/bo7-cover.jpg')
+  image: null,  // Emoji icon for card
+  coverImage: '/images/bo7z_logo.png',  // Optional: URL to cover image (e.g., '/images/bo7-cover.jpg')
   
   // Theme Colors (customize per guide)
   theme: {
-    primary: '#10b981',      // Main accent color (green for zombies)
-    secondary: '#059669',    // Darker shade
-    background: '#0f172a',   // Page background
-    card: '#1e293b',         // Card/section background
+    primary: '#b858eb',      // Main accent color (green for zombies)
+    secondary: '#7121ab',    // Darker shade
+    background: '#0a0e10',   // Page background
+    card: '#1d2123',         // Card/section background
     text: '#f1f5f9',         // Text color
-    accent: '#34d399',       // Optional: highlights, badges
+    accent: '#b858eb',       // Optional: highlights, badges
   },
   
   // Layout Options
