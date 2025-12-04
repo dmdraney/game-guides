@@ -36,39 +36,35 @@ export default {
   
   // Requirements (optional)
   requirements: [
-    'Level 30+ recommended',
-    'Pack-a-Punch unlocked',
-    'Ray Gun or Wonder Weapon helpful'
+    'Stun Grenades',
   ],
   
   // Steps with enhanced features
   steps: [
     {
       id: 1,
-      title: 'Power Activation',
-      description: 'Turn on the power to enable key map features',
+      title: 'Restore Ol\' Tessie',
+      description: 'Janus Towers Plaza',
       
       // Visual customization per step
-      icon: '⚡',  // Optional emoji icon
+      icon: '🤖',  // Optional emoji icon
       color: '#fbbf24',  // Optional custom color for this step
       
       // Step content
       substeps: [
-        'Locate the power switch in the spawn room',
-        'Clear zombies around the power area',
-        'Activate the power switch',
-        'Verify all electronics are now active'
+        'Open the door to the server room (1,250 essence)',
+        'Melee the circular grate in the floor and retrieve T.E.D.D.\'s head',
+        'Install T.E.D.D.\'s head onto Ol\' Tessie, the pickup truck'
       ],
       
       // Tips specific to this step
       tips: [
-        'Use a weapon with good ammo capacity',
-        'Consider buying Quick Revive before activating power'
+        
       ],
       
       // Warnings (shown in red/orange)
       warnings: [
-        'Zombies spawn faster after power is activated'
+        
       ],
       
       // Optional: Images or videos
@@ -79,28 +75,30 @@ export default {
       
       // Optional: Checklist items can have notes
       substepNotes: {
-        0: 'Look for the red glowing switch',  // Note for first substep
-        2: 'Hold interact button for 3 seconds'
+        0: 'Kill 11-14 zombies',  // Note for first substep
       }
     },
     
     {
       id: 2,
-      title: 'Collect the Ancient Artifacts',
-      description: 'Find and collect all 4 ancient artifacts scattered across the map',
-      icon: '💎',
+      title: 'Drive',
+      description: 'Fog-Shrouded Zones',
+      icon: '🌫️',
       
       substeps: [
-        'Artifact 1: Located in the Laboratory basement',
-        'Artifact 2: Hidden in the Chapel behind the altar',
-        'Artifact 3: Found in the Courtyard near the fountain',
-        'Artifact 4: Inside the Armory, upper level'
+        'Get in Ol\' Tessie, turn left (southwest), and drive through the wooden barrier',
+        'Follow the path to the next zone, Blackwater Lake',
+        'Crash through the gate and exit the vehicle'
       ],
       
       tips: [
-        'Artifacts only spawn after power is activated',
-        'You may need Pack-a-Punch weapons for some areas',
-        'Use the map to track which artifacts you\'ve collected'
+        'Drive over yellow clusters to heal Ol\' Tessie'
+      ],
+
+      // Warnings (shown in red/orange)
+      warnings: [
+        'Stay in the truck! Agile, four-legged Ravagers prowl the fog-shrouded areas between points of interest. They will latch onto moving vehicles, even at high speeds, and can quickly damage Ol\' Tessie and players.',
+        'Avoid orange clusters! Impact will cause an explosion, which will damage Ol\' Tessie'
       ],
       
       // Optional: Show a map or reference image
@@ -111,105 +109,125 @@ export default {
     
     {
       id: 3,
-      title: 'Musical Cipher Puzzle',
-      description: 'Complete the musical sequence puzzle',
-      icon: '🎵',
+      title: 'Restore Power to the Cabin',
+      description: 'Blackwater Lake',
+      icon: '🏠',
       color: '#8b5cf6',
       
       substeps: [
-        'Find the 3 musical instruments on the map',
-        'Listen to the melody played in the main hall',
-        'Play the instruments in the correct order: Piano, Violin, Drums',
-        'Confirm the door to the crypt opens'
+        'Clear the infestation off the power pump',
+        'Open the cabin door (1,750 essence)',
+        'Turn on the power',
+        'Collect the Jar of Spores',
+        'Drive to Ashwood'
       ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        0: 'Shoot the orange clusters on the sides and then the top',
+        2: 'The switch is on a boarded-up window on the second floor of the cabin',
+        3: 'Located in the cabin\'s kitchen on a shelf under the counter'
+      },
       
       tips: [
-        'Record or remember the melody - it\'s always the same',
-        'All players can interact with instruments',
-        'The melody is: C, E, G, B flat'
+
+      ],
+
+      // Warnings (shown in red/orange)
+      warnings: [
+        'Timed event! You will only have 30 seconds to clear the infestation. The timer starts after dealing any damage to a cluster. If you fail, you must wait until the next round to try again.',
       ],
       
       // Optional: Step variations
       alternatives: [
-        'If playing solo, you have 10 seconds between each instrument',
-        'In co-op, coordinate with teammates to play simultaneously'
+        
       ]
     },
     
     {
       id: 4,
-      title: 'Boss Fight Preparation',
-      description: 'Prepare for the final boss encounter',
-      icon: '🛡️',
+      title: 'Restore Power to Ashwood',
+      description: 'Ashwood',
+      icon: '🚚',
       color: '#ef4444',
       
       substeps: [
-        'Pack-a-Punch your primary weapons',
-        'Stock up on max ammo and equipment',
-        'Ensure all players have Ray Gun or Wonder Weapon',
-        'Position near the boss arena entrance'
+        'Open the first door (1,000 essence)',
+        'Clear the floating debris (1,750)',
+        'Clear the infestation off the power pump',
+        'Turn on the power',
+        'Install the Pack-a-Punch machine on Ol\' Tessie',
+        'Drive to Exit 115'
       ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        0: 'Go up the east zipline and turn right',
+        1: 'Go through the first unlocked door and turn right after exiting the house',
+        2: 'On a bridge past the cleared debris',
+        3: 'The switch is located on a nearby platform overlooking the pump',
+        4: 'Park Tessie in the now-open garage and interact with the workbench inside'
+      },
       
       tips: [
-        'Keep at least 2000 points for emergencies',
-        'Juggernog and Speed Cola are essential',
-        'Buy armor if available'
+
       ],
       
       warnings: [
-        'This is a point of no return - make sure you\'re ready',
-        'Cannot leave boss arena once entered'
+
       ]
     },
     
     {
       id: 5,
-      title: 'Final Boss Battle',
-      description: 'Defeat the Ancient Guardian',
-      icon: '👹',
+      title: 'Install the Abomination Beam',
+      description: 'Exit 115',
+      icon: '☄️',
       color: '#dc2626',
       
       substeps: [
-        'Enter the boss arena through the crypt',
-        'Target the glowing weak points on the boss',
-        'Survive 3 waves while damaging the boss',
-        'Watch the final cutscene'
+        'Open the door to Reba\'s Diner (1,500 essence)',
+        'Obtain the Freeze Key',
+        'Obtain the Abomination Carcass',
+        'Obtain a Combat Axe',
+        'Install the Abomination Beam'
       ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        1: 'Kill zombies in the diner until one drops the orange-glowing key (1-2 rounds)',
+        2: 'Use the freeze key to unlock the freezer in the back corner of the diner',
+        3: 'Collect one from the meat on the diner kitchen counter or craft one (300 salvage)',
+        4: 'Drive back to Ashwood and use the vehicle upgrade bench in the garage'
+      },
       
       tips: [
-        'Keep moving - don\'t stay still',
-        'Focus weak points during vulnerability phases',
-        'Use monkey bombs to manage zombies',
-        'Boss has three phases with different attack patterns'
+
       ],
       
       warnings: [
-        'Boss one-hit kills if you get grabbed',
-        'Area gets smaller as fight progresses'
+
       ],
       
       // Boss strategy
-      strategy: 'Focus on dodging attacks in Phase 1. In Phase 2, use cover. Phase 3 requires constant movement.'
+      strategy: ''
     }
   ],
   
   // Rewards/Completion info
   rewards: [
-    'Dark Ops calling card',
-    'Exclusive zombie skin',
-    '1000 XP bonus'
+
   ],
   
   // Related guides (optional)
   relatedGuides: [
-    'bo7-zombies-weapons',
-    'bo7-zombies-perks'
+
   ],
   
   // Credits (optional)
-  credits: 'Guide created by [Your Name]. Last updated: December 2024',
+  credits: 'Guide by GameGuides. Last updated: December 2025',
   
   // Version for tracking updates
   version: '1.0',
-  lastUpdated: '2024-12-04'
+  lastUpdated: '2025-12-04'
 };
