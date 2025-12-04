@@ -328,13 +328,33 @@ export default function GuideViewer({ guide }) {
                         marginBottom: '1.5rem'
                       }}>
                         <h4 style={{ fontSize: '0.875rem', fontWeight: '600', marginBottom: '0.75rem', color: '#ef4444', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                          <AlertTriangle size={16} />
                           WARNINGS
                         </h4>
                         {step.warnings.map((warning, idx) => (
                           <div key={idx} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
                             <span style={{ color: '#ef4444', flexShrink: 0 }}>⚠️</span>
                             <span style={{ fontSize: '0.875rem', opacity: 0.9 }}>{warning}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Tips */}
+                    {showTips && step.tips && step.tips.length > 0 && (
+                      <div style={{
+                        background: 'rgba(59, 130, 246, 0.1)',
+                        border: '1px solid rgba(59, 130, 246, 0.3)',
+                        borderRadius: '0.5rem',
+                        padding: '1rem',
+                        marginBottom: '1rem'
+                      }}>
+                        <h4 style={{ fontSize: '0.875rem', fontWeight: '600', marginBottom: '0.75rem', color: '#60a5fa', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                          TIPS
+                        </h4>
+                        {step.tips.map((tip, idx) => (
+                          <div key={idx} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                            <span style={{ color: '#60a5fa', flexShrink: 0 }}>💡</span>
+                            <span style={{ fontSize: '0.875rem', opacity: 0.9 }}>{tip}</span>
                           </div>
                         ))}
                       </div>
@@ -403,28 +423,6 @@ export default function GuideViewer({ guide }) {
                         );
                       })}
                     </div>
-
-                    {/* Tips */}
-                    {showTips && step.tips && step.tips.length > 0 && (
-                      <div style={{
-                        background: 'rgba(59, 130, 246, 0.1)',
-                        border: '1px solid rgba(59, 130, 246, 0.3)',
-                        borderRadius: '0.5rem',
-                        padding: '1rem',
-                        marginBottom: '1rem'
-                      }}>
-                        <h4 style={{ fontSize: '0.875rem', fontWeight: '600', marginBottom: '0.75rem', color: '#60a5fa', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                          <Lightbulb size={16} />
-                          PRO TIPS
-                        </h4>
-                        {step.tips.map((tip, idx) => (
-                          <div key={idx} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                            <span style={{ color: '#60a5fa', flexShrink: 0 }}>•</span>
-                            <span style={{ fontSize: '0.875rem', opacity: 0.9 }}>{tip}</span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
 
                     {/* Strategy */}
                     {step.strategy && (
