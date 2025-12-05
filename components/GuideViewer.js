@@ -10,14 +10,16 @@ export default function GuideViewer({ guide }) {
   const [expandedSteps, setExpandedSteps] = useState(
     new Set(guide.layout?.autoExpand ? guide.steps.map(s => s.id) : [1])
   );
+  const [interactiveData, setInteractiveData] = useState({});
 
   // Load saved progress
   useEffect(() => {
     const saved = localStorage.getItem(`guide_progress_${guide.slug}`);
     if (saved) {
-      const { steps, substeps } = JSON.parse(saved);
+      const { steps, substeps, interactive } = JSON.parse(saved);
       setCompletedSteps(new Set(steps));
       setCompletedSubsteps(new Set(substeps));
+      setInteractiveData(interactive || {});
     }
   }, [guide.slug]);
 
@@ -25,9 +27,10 @@ export default function GuideViewer({ guide }) {
   useEffect(() => {
     localStorage.setItem(`guide_progress_${guide.slug}`, JSON.stringify({
       steps: Array.from(completedSteps),
-      substeps: Array.from(completedSubsteps)
+      substeps: Array.from(completedSubsteps),
+      interactive: interactiveData
     }));
-  }, [completedSteps, completedSubsteps, guide.slug]);
+  }, [completedSteps, completedSubsteps, interactiveData, guide.slug]);
 
   const toggleStep = (stepId) => {
     const newCompleted = new Set(completedSteps);
@@ -63,14 +66,558 @@ export default function GuideViewer({ guide }) {
     if (confirm('Reset all progress? This cannot be undone.')) {
       setCompletedSteps(new Set());
       setCompletedSubsteps(new Set());
+      setInteractiveData({});  // ← Add this line
       localStorage.removeItem(`guide_progress_${guide.slug}`);
     }
+  };
+
+  const updateInteractiveField = (stepId, fieldId, value) => {
+    setInteractiveData(prev => ({
+      ...prev,
+      [`${stepId}-${fieldId}`]: value
+    }));
+  };
+
+  const getInteractiveValue = (stepId, fieldId) => {
+    return interactiveData[`${stepId}-${fieldId}`] || null;
+  };
+
+  const clearInteractiveField = (stepId, fieldId) => {
+    setInteractiveData(prev => {
+      const newData = { ...prev };
+      delete newData[`${stepId}-${fieldId}`];
+      return newData;
+    });
   };
 
   const progress = (completedSteps.size / guide.steps.length) * 100;
   const layout = guide.layout || {};
   const showTips = layout.showTips !== false;
   const showProgress = layout.showProgress !== false;
+
+  // Dropdown field component
+  const DropdownField = ({ stepId, field }) => {
+    const value = getInteractiveValue(stepId, field.id);
+    
+    return (
+      <div style={{ marginBottom: '1rem' }}>
+        <label style={{ 
+          display: 'block', 
+          fontWeight: '600', 
+          marginBottom: '0.5rem',
+          fontSize: '0.875rem',
+          color: guide.theme.primary
+        }}>
+          {field.label}
+        </label>
+        {field.description && (
+          <p style={{ 
+            fontSize: '0.8125rem', 
+            opacity: 0.7, 
+            margin: '0 0 0.5rem 0' 
+          }}>
+            {field.description}
+          </p>
+        )}
+        <select
+          value={value || ''}
+          onChange={(e) => updateInteractiveField(stepId, field.id, e.target.value)}
+          style={{
+            width: '100%',
+            padding: '0.75rem',
+            background: guide.theme.card,
+            color: guide.theme.text,
+            border: `2px solid ${value ? guide.theme.primary : '#475569'}`,
+            borderRadius: '0.5rem',
+            fontSize: '0.9375rem',
+            cursor: 'pointer',
+            outline: 'none'
+          }}
+        >
+          <option value="">-- Select One --</option>
+          {field.options.map(opt => (
+            <option key={opt.value} value={opt.value}>
+              {opt.icon ? `${opt.icon} ` : ''}{opt.label}
+            </option>
+          ))}
+        </select>
+      </div>
+    );
+  };
+
+  // Text input field component
+  const TextField = ({ stepId, field }) => {
+    const value = getInteractiveValue(stepId, field.id) || '';
+    
+    return (
+      <div style={{ marginBottom: '1rem' }}>
+        <label style={{ 
+          display: 'block', 
+          fontWeight: '600', 
+          marginBottom: '0.5rem',
+          fontSize: '0.875rem',
+          color: guide.theme.primary
+        }}>
+          {field.label}
+        </label>
+        {field.description && (
+          <p style={{ 
+            fontSize: '0.8125rem', 
+            opacity: 0.7, 
+            margin: '0 0 0.5rem 0' 
+          }}>
+            {field.description}
+          </p>
+        )}
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => updateInteractiveField(stepId, field.id, e.target.value)}
+          placeholder={field.placeholder || ''}
+          maxLength={field.maxLength}
+          style={{
+            width: '100%',
+            padding: '0.75rem',
+            background: guide.theme.card,
+            color: guide.theme.text,
+            border: `2px solid ${value ? guide.theme.primary : '#475569'}`,
+            borderRadius: '0.5rem',
+            fontSize: '0.9375rem',
+            outline: 'none'
+          }}
+        />
+      </div>
+    );
+  };
+
+  // Sequence selector component (for ordering items)
+  const SequenceField = ({ stepId, field }) => {
+    const value = getInteractiveValue(stepId, field.id) || [];
+    
+    const addToSequence = (optionValue) => {
+      if (value.length < field.positions && !value.includes(optionValue)) {
+        updateInteractiveField(stepId, field.id, [...value, optionValue]);
+      }
+    };
+    
+    const removeFromSequence = (index) => {
+      const newValue = value.filter((_, i) => i !== index);
+      updateInteractiveField(stepId, field.id, newValue);
+    };
+    
+    return (
+      <div style={{ marginBottom: '1rem' }}>
+        <label style={{ 
+          display: 'block', 
+          fontWeight: '600', 
+          marginBottom: '0.5rem',
+          fontSize: '0.875rem',
+          color: guide.theme.primary
+        }}>
+          {field.label}
+        </label>
+        {field.description && (
+          <p style={{ 
+            fontSize: '0.8125rem', 
+            opacity: 0.7, 
+            margin: '0 0 0.5rem 0' 
+          }}>
+            {field.description}
+          </p>
+        )}
+        
+        {/* Current sequence */}
+        <div style={{ 
+          display: 'flex', 
+          gap: '0.5rem', 
+          marginBottom: '1rem',
+          flexWrap: 'wrap'
+        }}>
+          {Array.from({ length: field.positions }).map((_, index) => (
+            <div
+              key={index}
+              onClick={() => value[index] && removeFromSequence(index)}
+              style={{
+                width: '80px',
+                height: '80px',
+                border: `2px solid ${value[index] ? guide.theme.primary : '#475569'}`,
+                borderRadius: '0.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: value[index] ? `${guide.theme.primary}20` : guide.theme.card,
+                cursor: value[index] ? 'pointer' : 'default',
+                fontSize: '2rem'
+              }}
+            >
+              {value[index] ? (
+                <>
+                  <div>{field.options.find(o => o.value === value[index])?.icon}</div>
+                  <div style={{ fontSize: '0.625rem', marginTop: '0.25rem' }}>
+                    #{index + 1}
+                  </div>
+                </>
+              ) : (
+                <div style={{ fontSize: '1.5rem', opacity: 0.3 }}>#{index + 1}</div>
+              )}
+            </div>
+          ))}
+        </div>
+        
+        {/* Available options */}
+        <div style={{ 
+          display: 'flex', 
+          gap: '0.5rem',
+          flexWrap: 'wrap'
+        }}>
+          {field.options.map(option => (
+            <button
+              key={option.value}
+              onClick={() => addToSequence(option.value)}
+              disabled={value.includes(option.value) || value.length >= field.positions}
+              style={{
+                padding: '0.75rem 1rem',
+                background: value.includes(option.value) 
+                  ? '#475569' 
+                  : guide.theme.card,
+                color: guide.theme.text,
+                border: `2px solid ${value.includes(option.value) ? '#475569' : guide.theme.primary}`,
+                borderRadius: '0.5rem',
+                cursor: value.includes(option.value) || value.length >= field.positions 
+                  ? 'not-allowed' 
+                  : 'pointer',
+                opacity: value.includes(option.value) ? 0.5 : 1,
+                fontSize: '0.875rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem'
+              }}
+            >
+              <span style={{ fontSize: '1.5rem' }}>{option.icon}</span>
+              {option.label}
+            </button>
+          ))}
+        </div>
+        
+        {value.length > 0 && (
+          <button
+            onClick={() => clearInteractiveField(stepId, field.id)}
+            style={{
+              marginTop: '0.75rem',
+              padding: '0.5rem 1rem',
+              background: 'transparent',
+              color: '#ef4444',
+              border: '1px solid #ef4444',
+              borderRadius: '0.5rem',
+              cursor: 'pointer',
+              fontSize: '0.8125rem'
+            }}
+          >
+            Clear Sequence
+          </button>
+        )}
+      </div>
+    );
+  };
+
+  // Image selection sequence component
+  const ImageSelectField = ({ stepId, field }) => {
+    const value = getInteractiveValue(stepId, field.id) || [];
+    
+    const addToSequence = (optionValue) => {
+      if (value.length < field.positions && !value.includes(optionValue)) {
+        updateInteractiveField(stepId, field.id, [...value, optionValue]);
+      }
+    };
+    
+    const removeFromSequence = (index) => {
+      const newValue = value.filter((_, i) => i !== index);
+      updateInteractiveField(stepId, field.id, newValue);
+    };
+    
+    const getOption = (optionValue) => {
+      return field.options.find(o => o.value === optionValue);
+    };
+    
+    return (
+      <div style={{ marginBottom: '1rem' }}>
+        <label style={{ 
+          display: 'block', 
+          fontWeight: '600', 
+          marginBottom: '0.5rem',
+          fontSize: '0.875rem',
+          color: guide.theme.primary
+        }}>
+          {field.label}
+        </label>
+        {field.description && (
+          <p style={{ 
+            fontSize: '0.8125rem', 
+            opacity: 0.7, 
+            margin: '0 0 0.5rem 0' 
+          }}>
+            {field.description}
+          </p>
+        )}
+        
+        {/* Current sequence - shows selected images */}
+        <div style={{ 
+          display: 'flex', 
+          gap: '0.75rem', 
+          marginBottom: '1.5rem',
+          flexWrap: 'wrap',
+          padding: '1rem',
+          background: guide.theme.card,
+          borderRadius: '0.5rem',
+          border: `2px solid ${guide.theme.primary}30`
+        }}>
+          {Array.from({ length: field.positions }).map((_, index) => {
+            const selectedOption = value[index] ? getOption(value[index]) : null;
+            
+            return (
+              <div key={index} style={{ textAlign: 'center' }}>
+                <div
+                  onClick={() => value[index] && removeFromSequence(index)}
+                  style={{
+                    width: '100px',
+                    height: '100px',
+                    border: `3px solid ${selectedOption ? guide.theme.primary : '#475569'}`,
+                    borderRadius: '0.75rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: selectedOption ? `${guide.theme.primary}15` : 'rgba(255,255,255,0.05)',
+                    cursor: selectedOption ? 'pointer' : 'default',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    transition: 'all 0.2s'
+                  }}
+                  onMouseEnter={(e) => {
+                    if (selectedOption) {
+                      e.currentTarget.style.transform = 'scale(1.05)';
+                      e.currentTarget.style.boxShadow = `0 4px 12px ${guide.theme.primary}60`;
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (selectedOption) {
+                      e.currentTarget.style.transform = 'scale(1)';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }
+                  }}
+                >
+                  {selectedOption ? (
+                    <img 
+                      src={selectedOption.image} 
+                      alt={selectedOption.label}
+                      style={{ 
+                        width: '100%', 
+                        height: '100%', 
+                        objectFit: 'contain',
+                        padding: '0.5rem'
+                      }}
+                    />
+                  ) : (
+                    <div style={{ 
+                      fontSize: '1.5rem', 
+                      opacity: 0.3,
+                      fontWeight: 'bold',
+                      color: guide.theme.text
+                    }}>
+                      ?
+                    </div>
+                  )}
+                  
+                  {/* Position badge */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '0.25rem',
+                    left: '0.25rem',
+                    background: selectedOption ? guide.theme.primary : '#475569',
+                    color: 'white',
+                    width: '24px',
+                    height: '24px',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '0.75rem',
+                    fontWeight: 'bold'
+                  }}>
+                    {index + 1}
+                  </div>
+                  
+                  {/* Remove indicator on hover */}
+                  {selectedOption && (
+                    <div style={{
+                      position: 'absolute',
+                      top: '0.25rem',
+                      right: '0.25rem',
+                      background: '#ef4444',
+                      color: 'white',
+                      width: '20px',
+                      height: '20px',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '0.75rem',
+                      fontWeight: 'bold',
+                      opacity: 0.8
+                    }}>
+                      ×
+                    </div>
+                  )}
+                </div>
+                <div style={{ 
+                  marginTop: '0.5rem', 
+                  fontSize: '0.75rem',
+                  opacity: 0.7 
+                }}>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        
+        {/* Available symbol options */}
+        <div>
+          <h5 style={{ 
+            fontSize: '0.75rem', 
+            fontWeight: '600', 
+            marginBottom: '0.75rem',
+            opacity: 0.7,
+            textTransform: 'uppercase'
+          }}>
+            Available Symbols
+          </h5>
+          <div style={{ 
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))',
+            gap: '0.75rem'
+          }}>
+            {field.options.map(option => {
+              const isUsed = value.includes(option.value);
+              const isFull = value.length >= field.positions;
+              const isDisabled = isUsed || isFull;
+              
+              return (
+                <button
+                  key={option.value}
+                  onClick={() => addToSequence(option.value)}
+                  disabled={isDisabled}
+                  style={{
+                    padding: '0.5rem',
+                    background: isUsed 
+                      ? 'rgba(255,255,255,0.05)' 
+                      : guide.theme.card,
+                    border: `2px solid ${isUsed ? '#475569' : guide.theme.primary}`,
+                    borderRadius: '0.75rem',
+                    cursor: isDisabled ? 'not-allowed' : 'pointer',
+                    opacity: isDisabled ? 0.4 : 1,
+                    transition: 'all 0.2s',
+                    position: 'relative',
+                    aspectRatio: 'auto',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'space-between'
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isDisabled) {
+                      e.currentTarget.style.transform = 'scale(1.05)';
+                      e.currentTarget.style.borderColor = guide.theme.primary;
+                      e.currentTarget.style.boxShadow = `0 4px 12px ${guide.theme.primary}40`;
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isDisabled) {
+                      e.currentTarget.style.transform = 'scale(1)';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }
+                  }}
+                >
+                  <div style={{ 
+                    width: '100%',
+                    height: '100px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    <img 
+                      src={option.image} 
+                      alt={option.label}
+                      style={{ 
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        objectFit: 'contain',
+                        pointerEvents: 'none'
+                      }}
+                    />
+                  </div>
+                  <div style={{
+                    fontSize: '0.75rem',
+                    textAlign: 'center',
+                    marginTop: '0.5rem',
+                    opacity: isDisabled ? 0.5 : 0.8,
+                    lineHeight: 1.2,
+                    color: guide.theme.text
+                  }}>
+                    {option.label}
+                  </div>
+                  {isUsed && (
+                    <div style={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      background: 'rgba(0,0,0,0.8)',
+                      color: 'white',
+                      padding: '0.25rem 0.5rem',
+                      borderRadius: '0.25rem',
+                      fontSize: '0.625rem',
+                      fontWeight: 'bold'
+                    }}>
+                      USED
+                    </div>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+        
+        {/* Clear button */}
+        {value.length > 0 && (
+          <button
+            onClick={() => clearInteractiveField(stepId, field.id)}
+            style={{
+              marginTop: '1rem',
+              padding: '0.5rem 1rem',
+              background: 'transparent',
+              color: '#ef4444',
+              border: '1px solid #ef4444',
+              borderRadius: '0.5rem',
+              cursor: 'pointer',
+              fontSize: '0.8125rem',
+              width: '100%',
+              fontWeight: '500'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#ef4444';
+              e.currentTarget.style.color = 'white';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.color = '#ef4444';
+            }}
+          >
+            Clear All Selections
+          </button>
+        )}
+      </div>
+    );
+  };
 
   return (
     <div style={{ 
@@ -438,12 +985,51 @@ export default function GuideViewer({ guide }) {
                         );
                       })}
                     </div>
+                    {/* Interactive Fields */}
+                    {step.interactiveFields && step.interactiveFields.length > 0 && (
+                      <div style={{
+                        background: `${guide.theme.primary}10`,
+                        border: `2px solid ${guide.theme.primary}30`,
+                        borderRadius: '0.5rem',
+                        padding: '1.5rem',
+                        marginBottom: '1.5rem'
+                      }}>
+                        <h4 style={{ 
+                          fontSize: '0.875rem', 
+                          fontWeight: '600', 
+                          marginBottom: '1rem',
+                          color: guide.theme.primary,
+                          textTransform: 'uppercase'
+                        }}>
+                          📝 Track Your Game
+                        </h4>
+                        
+                        {step.interactiveFields.map(field => (
+                          <div key={field.id}>
+                            {field.type === 'dropdown' && (
+                              <DropdownField stepId={step.id} field={field} />
+                            )}
+                            {field.type === 'text' && (
+                              <TextField stepId={step.id} field={field} />
+                            )}
+                            {field.type === 'sequence' && (
+                              <SequenceField stepId={step.id} field={field} />
+                            )}
+                            {field.type === 'image-select' && (
+                              <ImageSelectField stepId={step.id} field={field} />
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
             );
           })}
         </div>
+
+        
 
         {/* Completion message */}
         {completedSteps.size === guide.steps.length && (
