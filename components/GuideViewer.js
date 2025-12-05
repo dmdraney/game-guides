@@ -360,6 +360,21 @@ export default function GuideViewer({ guide }) {
                       </div>
                     )}
 
+                    {/* Strategy */}
+                    {step.strategy && (
+                      <div style={{
+                        background: 'rgba(168, 85, 247, 0.1)',
+                        border: '1px solid rgba(168, 85, 247, 0.3)',
+                        borderRadius: '0.5rem',
+                        padding: '1rem'
+                      }}>
+                        <h4 style={{ fontSize: '0.875rem', fontWeight: '600', marginBottom: '0.5rem', color: '#a855f7' }}>
+                          STRATEGY
+                        </h4>
+                        <p style={{ fontSize: '0.875rem', opacity: 0.9, margin: 0 }}>{step.strategy}</p>
+                      </div>
+                    )}
+
                     {/* Substeps */}
                     <div style={{ marginBottom: '1.5rem' }}>
                       <h4 style={{ fontSize: '0.875rem', fontWeight: '600', marginBottom: '0.75rem', opacity: 0.7 }}>
@@ -423,21 +438,6 @@ export default function GuideViewer({ guide }) {
                         );
                       })}
                     </div>
-
-                    {/* Strategy */}
-                    {step.strategy && (
-                      <div style={{
-                        background: 'rgba(168, 85, 247, 0.1)',
-                        border: '1px solid rgba(168, 85, 247, 0.3)',
-                        borderRadius: '0.5rem',
-                        padding: '1rem'
-                      }}>
-                        <h4 style={{ fontSize: '0.875rem', fontWeight: '600', marginBottom: '0.5rem', color: '#a855f7' }}>
-                          🎯 STRATEGY
-                        </h4>
-                        <p style={{ fontSize: '0.875rem', opacity: 0.9, margin: 0 }}>{step.strategy}</p>
-                      </div>
-                    )}
                   </div>
                 )}
               </div>
