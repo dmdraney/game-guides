@@ -118,8 +118,7 @@ export default {
         'Clear the infestation off the power pump',
         'Open the cabin door (1,750 essence)',
         'Turn on the power',
-        'Collect the Jar of Spores',
-        'Drive to Ashwood'
+        'Collect the Jar of Spores'
       ],
 
       // Optional: Checklist items can have notes
@@ -152,21 +151,21 @@ export default {
       color: '#ef4444',
       
       substeps: [
+        'Drive to Ashwood',
         'Open the first door (1,000 essence)',
         'Clear the floating debris (1,750)',
         'Clear the infestation off the power pump',
         'Turn on the power',
-        'Install the Pack-a-Punch machine on Ol\' Tessie',
-        'Drive to Exit 115'
+        'Install the Pack-a-Punch machine on Ol\' Tessie'
       ],
 
       // Optional: Checklist items can have notes
       substepNotes: {
-        0: 'Go up the east zipline and turn right',
-        1: 'Go through the first unlocked door and turn right after exiting the house',
-        2: 'On a bridge past the cleared debris',
-        3: 'The switch is located on a nearby platform overlooking the pump',
-        4: 'Park Tessie in the now-open garage and interact with the workbench inside'
+        1: 'Go up the east zipline and turn right',
+        2: 'Go through the first unlocked door and turn right after exiting the house',
+        3: 'On a bridge past the cleared debris',
+        4: 'The switch is located on a nearby platform overlooking the pump',
+        5: 'Park Tessie in the now-open garage and interact with the workbench inside'
       },
       
       tips: [
@@ -181,24 +180,27 @@ export default {
     {
       id: 5,
       title: 'Install the Abomination Beam',
-      description: 'Exit 115',
+      description: 'Exit 115 & Ashwood',
       icon: '☄️',
       color: '#dc2626',
       
       substeps: [
+        'Drive to Exit 115',
         'Open the door to Reba\'s Diner (1,500 essence)',
         'Obtain the Freeze Key',
         'Obtain the Abomination Carcass',
         'Obtain a Combat Axe',
-        'Install the Abomination Beam'
+        'Install the Abomination Beam',
+        'Obtain a Molotov'
       ],
 
       // Optional: Checklist items can have notes
       substepNotes: {
-        1: 'Kill zombies in the diner until one drops the orange-glowing key (1-2 rounds)',
-        2: 'Use the freeze key to unlock the freezer in the back corner of the diner',
-        3: 'Collect one from the meat on the diner kitchen counter or craft one (300 salvage)',
-        4: 'Drive back to Ashwood and use the vehicle upgrade bench in the garage'
+        2: 'Kill zombies in the diner until one drops the orange-glowing key (1-2 rounds)',
+        3: 'Use the freeze key to unlock the freezer in the back corner of the diner',
+        4: 'Collect one from the meat on the diner kitchen counter or craft one (300 salvage)',
+        5: 'Drive back to Ashwood and use the vehicle upgrade bench in the garage',
+        6: 'Collect one from the barrel outside the garage or craft one (350 salvage)'
       },
       
       tips: [
@@ -211,6 +213,507 @@ export default {
       
       // Boss strategy
       strategy: ''
+    },
+
+    {
+      id: 6,
+      title: 'Restore Power to Vandorn Farm',
+      description: 'Vandorn Farm',
+      icon: '🚜',
+      color: '#dc2626',
+      
+      substeps: [
+        'Drive to Vandorn Farm',
+        'Clear the infestation off the power pump',
+        'Open the door to the Barn (2,000 essence)',
+        'Turn on the power',
+        'Install the Abomination Beam'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        3: 'The switch is located on the barn\'s second floor by the front windows',
+        4: 'Drive back to Ashwood and use the vehicle upgrade bench in the garage'
+      },
+      
+      tips: [
+
+      ],
+      
+      warnings: [
+
+      ]
+    },
+
+    {
+      id: 7,
+      title: 'Collect the Human Bones',
+      description: 'Vandorn Farm',
+      icon: '🦴',
+      color: '#dc2626',
+      
+      substeps: [
+        'Chop off the leg',
+        'Burn the leg',
+        'Collect the Human Bones'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        0: 'Throw the Combat Axe at the right leg of the Zombie hanging from the center of the Barn',
+        1: 'Throw the Molotov at the severed leg on the ground to collect the bones'
+      },
+      
+      tips: [
+
+      ],
+      
+      warnings: [
+
+      ]
+    },
+
+    {
+      id: 8,
+      title: 'Collect the Widow\'s Lantern',
+      description: 'Vandorn Farm',
+      icon: '🏮',
+      color: '#dc2626',
+      
+      substeps: [
+        'Use the Jar of Spores on the horse carcass',
+        'Collect the Widow\'s Lantern'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        0: 'Located on the road outside the farm (red particles will appear after successful use)',
+        1: 'Spawns on the horse carcass after three rounds'
+      },
+      
+      tips: [
+        'This step takes three rounds. Try to complete the next step (Ravager Eyes) while you wait.'
+      ],
+      
+      warnings: [
+
+      ]
+    },
+
+    {
+      id: 9,
+      title: 'Collect the Ravager Eyes',
+      description: 'Vandorn Farm',
+      icon: '👁️',
+      color: '#dc2626',
+      
+      substeps: [
+        'Activate the Saw Trap to kill a Ravager',
+        'Collect the Ravager Eyes dropped by the Ravager'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        0: ''
+      },
+      
+      tips: [
+        'Do this step on Round 5 or 10, which are both special Ravager rounds'
+      ],
+      
+      warnings: [
+
+      ]
+    },
+
+    {
+      id: 10,
+      title: 'Defeat Uber Klaus',
+      description: 'Janus Towers Plaza',
+      icon: '🐻',
+      color: '#dc2626',
+      
+      substeps: [
+        'Drive to Janus Towers Plaza',
+        'Summon Uber Klaus',
+        'Defeat Uber Klaus',
+        'Defeat Uber Klaus Core',
+        'Collect the Stabilizer Chip'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        1: 'Approach the shipping container on the ledge by the gate to Blackwater Lake'
+      },
+      
+      tips: [
+        'Prepare by pack-a-punching a weapon and upgrading its rarity',
+        'The Napalm Burst ammo mod is very effective against Uber Klaus'
+      ],
+      
+      warnings: [
+        'Mini boss! Only spawns from round 8 onward.'
+      ],
+
+      // Boss strategy
+      strategy: 'Keep your distance! Uber Klause will charge at players who get too close. Keep moving to avoid his AoE jump attack. Aim at the purple glowing parts on his shoulders, which weaken him when broken. '
+    },
+
+    {
+      id: 11,
+      title: 'Activate Friendly Klaus',
+      description: 'Ashwood',
+      icon: '🤝',
+      color: '#dc2626',
+      
+      substeps: [
+        'Drive to Ashwood',
+        'Ascend the zipline to Market Square',
+        'Open the door to the Ashwood Sheriff\'s Office (500 essence)',
+        'Install the Stabilizer Chip',
+        'Restart Friendly Klaus'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        1: 'East zipline',
+        2: 'Located at the back of the Square to the left',
+        3: 'Interact with the device on the cell door (screen will read, "update requires restart")',
+        4:  'Throw 2-4 stun grenades at Klaus in quick succession until he is activated and moving about the cell'
+      },
+      
+      tips: [
+        'If you brought Stun Grenades in your loadout and haven\'t used them, they should be full from the max ammo powerup after Ravager rounds.',
+        'If you need more Stun Grenades, craft them at a work bench (250 salvage) or collect the free Stun Grenade on the shelf next to the Jugger-Nog machine.',
+        'Klaus will take the place of your Tactical slot and can be called anywhere on the map for assistance.'
+      ],
+      
+      warnings: [
+
+      ]
+    },
+
+    {
+      id: 12,
+      title: 'Collect the Aether Barrel',
+      description: 'Zarya Cosmodrome',
+      icon: '🛢️',
+      color: '#dc2626',
+      
+      substeps: [
+        'Drive to Zarya Cosmodrome',
+        'Purchase the Wisp Tea perk-a-cola',
+        'Open the door leading down (1,000 essence)',
+        'Restore the broken machine',
+        'Complete the Scan Progress challenge',
+        'Collect the Aether Barrel'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        1: 'Required to obtain the serum ingredient',
+        2: 'Head left from the Wisp Tea machine and go down the stairs',
+        3: 'Look at the ground in front of the machine on the wall to your right and summon Klaus (Tactical slot) who will stomp the ground and cause a green light to appear on the machine',
+        4: 'Stay in the red circle that appears on the ground for 60 seconds',
+        5: 'Appears in a compartment beneath the scanner'
+      },
+      
+      tips: [
+        'The timer will go faster when facing the scanner. Balance facing the scanner and defending yourself.'
+      ],
+      
+      warnings: [
+        'Stay in the circle! Moving out of the red circle will cause you to fail the Scan Progress challenge, and you will need to wait until the next round to try again.'
+      ]
+    },
+
+    {
+      id: 13,
+      title: 'Fill the Aether Barrel at Blackwater Lake',
+      description: 'Blackwater Lake',
+      icon: '🏠',
+      color: '#dc2626',
+      
+      substeps: [
+        'Drive to Blackwater Lake',
+        'Insert the Aether Barrel into the Power Pump',
+        'Collect the filled Aether Barrel'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        1: 'Remain in the vicinity and defeat incoming zombies while the progress bar fills'
+      },
+      
+      tips: [
+
+      ],
+      
+      warnings: [
+        'Don\'t fast travel! Using Jump Pads will cause you to drop the Aether Barrel.'
+      ]
+    },
+
+    {
+      id: 14,
+      title: 'Fill the Aether Barrel at Ashwood',
+      description: 'Ashwood',
+      icon: '🚚',
+      color: '#dc2626',
+      
+      substeps: [
+        'Drive to Ashwood',
+        'Insert the Aether Barrel into the Power Pump',
+        'Collect the filled Aether Barrel'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        1: 'Remain in the vicinity and defeat incoming zombies while the progress bar fills'
+      },
+      
+      tips: [
+
+      ],
+      
+      warnings: [
+        
+      ]
+    },
+
+    {
+      id: 15,
+      title: 'Fill the Aether Barrel at Vandorn Farm',
+      description: 'Vandorn Farm',
+      icon: '🚜',
+      color: '#dc2626',
+      
+      substeps: [
+        'Drive to Vandorn Farm',
+        'Insert the Aether Barrel into the Power Pump',
+        'Collect the filled Aether Barrel'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        1: 'Remain in the vicinity and defeat incoming zombies while the progress bar fills'
+      },
+      
+      tips: [
+
+      ],
+      
+      warnings: [
+        
+      ]
+    },
+
+    {
+      id: 16,
+      title: 'Activate the Mysterious Box',
+      description: 'Vandorn Farm',
+      icon: '📦',
+      color: '#dc2626',
+      
+      substeps: [
+        'Go to the cellar under the barn',
+        'Interact with the Mysterious Box'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        
+      },
+      
+      tips: [
+
+      ],
+      
+      warnings: [
+        
+      ]
+    },
+
+    {
+      id: 17,
+      title: 'Find the Symbols for the Mysterious Box',
+      description: 'Vandorn Farm',
+      icon: '⚛️',
+      color: '#dc2626',
+      
+      substeps: [
+        'Note the symbol on the barn roof',
+        'Note the symbol on the farmhouse roof',
+        'Note the symbol on the silo',
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        2: 'Take the Jump Pad to Janus Towers Plaza (500 essence) and look back at Vandorn Farm to see the silo symbol clearly'
+      },
+      
+      tips: [
+        'Take a screenshot after using the Jump Pad while viewing the farm rooftops to help remember the symbols'
+      ],
+      
+      warnings: [
+        
+      ]
+    },
+
+    {
+      id: 18,
+      title: 'Complete the Gauntlet Trial',
+      description: 'Vandorn Farm',
+      icon: '🥊',
+      color: '#dc2626',
+      
+      substeps: [
+        'Input symbols into the Mysterious Box',
+        'Start the Gauntlet Trial',
+        'Complete the Gauntlet Trial'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        0: 'Interact with the sides of the box so each displays one of the three symbols',
+        1: 'Interact with the red eye on the box and collect the Necrofluid Gauntlet Wonder Weapon',
+        2: 'Remain in the green area and fire a spike from the Gauntlet at each of the glowing green orbs, reloading the recall the spikes and destroy the orbs'
+      },
+      
+      tips: [
+        
+      ],
+      
+      warnings: [
+        'Be prepared! The trial will start as soon as a player collects the Necrofluid Gauntlet.'
+      ]
+    },
+
+    {
+      id: 19,
+      title: 'Collect the Hoard Husk Chunks',
+      description: 'Fog-Shrouded Zones',
+      icon: '🌫️',
+      color: '#dc2626',
+      
+      substeps: [
+        'Drive into the fog-shrouded zones between points of interest',
+        'Find a Hoard Husk',
+        'Destroy a Hoard Husk',
+        'Collect the Hoard Husk Chunks dropped by the Hoard Husk'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        1: 'Glowing purple masses along the road',
+        2: 'Use Ol\' Tessie\'s Abomination Beam to destroy the Husk'
+        
+      },
+      
+      tips: [
+        
+      ],
+      
+      warnings: [
+        'Be careful! You must exit the car to pick up the Hoard Husk Chunks. Clear the area of enemies and minimize time outside the vehicle.'
+      ]
+    },
+
+    {
+      id: 20,
+      title: 'Collect the Mysterious Limb',
+      description: 'Anywhere',
+      icon: '💪',
+      color: '#dc2626',
+      
+      substeps: [
+        'Kill Zursa',
+        'Collect the Mysterious Limb'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        0: 'Use the Abomination Beam to deal the final blow',
+        1: 'Dropped on the ground after killing Zursa'
+        
+      },
+      
+      tips: [
+        'Zursa spawns at Round 16 and every few rounds thereafter. It can appear anywhere on the map.'
+      ],
+      
+      warnings: [
+        
+      ]
+    },
+
+    {
+      id: 21,
+      title: 'Collect the Powder of the Forgotten',
+      description: 'Ashwood',
+      icon: '💪',
+      color: '#dc2626',
+      
+      substeps: [
+        'Drive to Ashwood',
+        'Ascend the zipline to Market Square',
+        'Open the door to the Tailor Shop (1,250 essence)',
+        'Activate your Wisp',
+        'Activate the mirror',
+        'Shatter the mirror',
+        'Collect the Powder of the Forgotten'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        2: 'Next to the Arsenal machine',
+        3: 'Kill zombies until your Wisp appears',
+        4: 'Approach the mirro in the Tailor Shop and watch as your Wisp enters it',
+        5: 'Shoot the mirror wit the Necrofluid Gauntlet to shatter it',
+        6: 'Appears on the ground after shattering the mirror'
+        
+      },
+      
+      tips: [
+        'Ensure you have the Wisp Tea perk-a-cola before attempting this step.'
+      ],
+      
+      warnings: [
+        
+      ]
+    },
+
+    {
+      id: 22,
+      title: 'Craft the Serum',
+      description: 'Zarya Cosmodrome',
+      icon: '🧪',
+      color: '#dc2626',
+      
+      substeps: [
+        'Drive to Zarya Cosmodrome',
+        'Open the door to Yuri\'s Lab (2,000 essence)',
+        'Interact with the Powder of the Forgotten',
+        'Solve the Pigpen Cipher',
+        'Interact with the ingredients in the correct order'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        1: 'Located next to the M15 MOD 0 wall buy in a building marked by a red star',
+        2: 'White powder located in a dish on the lab table in the back corner of the garage',
+        3: 'Three encoded ingredients will appear on the chalkboard above the table. '
+        
+      },
+      
+      tips: [
+        
+      ],
+      
+      warnings: [
+        
+      ]
     }
   ],
   
