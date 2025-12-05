@@ -558,6 +558,26 @@ export default {
       
       warnings: [
         
+      ],
+
+      interactiveFields: [
+        {
+          id: 'symbols',
+          type: 'image-select',
+          label: 'Mysterious Box Symbols',
+          description: 'Select the symbols displayed on the farm building rooftops',
+          options: [
+            { value: 'symbol1', label: 'Symbol', image: '/images/bo7z-symbol1.png' },
+            { value: 'symbol2', label: 'Symbol', image: '/images/bo7z-symbol2.png' },
+            { value: 'symbol3', label: 'Symbol', image: '/images/bo7z-symbol3.png' },
+            { value: 'symbol4', label: 'Symbol', image: '/images/bo7z-symbol4.png' },
+            { value: 'symbol5', label: 'Symbol', image: '/images/bo7z-symbol5.png' },
+            { value: 'symbol6', label: 'Symbol', image: '/images/bo7z-symbol6.png' },
+            { value: 'symbol7', label: 'Symbol', image: '/images/bo7z-symbol7.png' },
+            { value: 'symbol8', label: 'Symbol', image: '/images/bo7z-symbol8.png' }
+          ],
+          positions: 3
+        }
       ]
     },
 
@@ -713,6 +733,52 @@ export default {
       
       warnings: [
         
+      ],
+
+      interactiveFields: [
+        {
+          id: 'ingredients',
+          type: 'image-select',
+          label: 'Serum Ingredients',
+          description: 'Select the ingredients in the correct order',
+          options: [
+            { value: 'ingredient1', label: 'Talus/Human Bones', image: '/images/talus.png' },
+            { value: 'ingredient2', label: 'Conch/Hoard Husk Chunks', image: '/images/conch.png' },
+            { value: 'ingredient3', label: 'Fungi/Widow\'s Lantern', image: '/images/fungi.png' },
+            { value: 'ingredient4', label: 'Oculi/Ravager Eyes', image: '/images/oculi.png' },
+            { value: 'ingredient5', label: 'Limbs/Mysterious Limb', image: '/images/limbs.png' }
+          ],
+          positions: 3
+        }
+      ]
+    },
+
+    {
+      id: 23,
+      title: 'Survive the Lockdown',
+      description: 'Zarya Cosmodrome',
+      icon: '🚨',
+      color: '#dc2626',
+      
+      substeps: [
+        'Add blood to the beaker',
+        'Fend off zombies for one minute'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        0: 'Interact with the beaker on the lab table',
+        1: 'The smoke will dissipate, doors unlock, and satellite dishes will begin moving outside upon successful completion'
+        
+      },
+      
+      tips: [
+        'Prepare yourself before starting this step. Buy tier 3 armor, pack-a-punch the Necrofluid Gauntlet twice, buy Jugger-Nog and other colas, buy a self-revive kit, buy a point turret, and buy stun grenades.'
+      ],
+      
+      warnings: [
+        'Incoming! Zombies and Ravagers will spawn continuously during this step.',
+        'Protect the president! The player who adds blood to the beaker will have their health reduced by 75. Should they go down, lockdown will fail and you will need to wait until the next round to try again.'
       ]
     }
   ],
