@@ -75,7 +75,6 @@ export default {
       
       // Optional: Checklist items can have notes
       substepNotes: {
-        0: 'Kill 11-14 zombies',  // Note for first substep
       }
     },
     
@@ -165,7 +164,7 @@ export default {
         2: 'Go through the first unlocked door and turn right after exiting the house',
         3: 'On a bridge past the cleared debris',
         4: 'The switch is located on a nearby platform overlooking the pump',
-        5: 'Park Tessie in the now-open garage and interact with the workbench inside'
+        5: 'Park Tessie in the now-open garage at the center of Ashwood, and interact with the workbench inside'
       },
       
       tips: [
@@ -196,7 +195,7 @@ export default {
 
       // Optional: Checklist items can have notes
       substepNotes: {
-        2: 'Kill zombies in the diner until one drops the orange-glowing key (1-2 rounds)',
+        2: 'Kill zombies in the diner until one (named "Cook") drops the orange-glowing key (1-2 rounds)',
         3: 'Use the freeze key to unlock the freezer in the back corner of the diner',
         4: 'Collect one from the meat on the diner kitchen counter or craft one (300 salvage)',
         5: 'Drive back to Ashwood and use the vehicle upgrade bench in the garage',
@@ -226,8 +225,7 @@ export default {
         'Drive to Vandorn Farm',
         'Clear the infestation off the power pump',
         'Open the door to the Barn (2,000 essence)',
-        'Turn on the power',
-        'Install the Abomination Beam'
+        'Turn on the power'
       ],
 
       // Optional: Checklist items can have notes
@@ -261,7 +259,7 @@ export default {
       // Optional: Checklist items can have notes
       substepNotes: {
         0: 'Throw the Combat Axe at the right leg of the Zombie hanging from the center of the Barn',
-        1: 'Throw the Molotov at the severed leg on the ground to collect the bones'
+        1: 'Throw the Molotov at the severed leg on the ground to burn off the flesh'
       },
       
       tips: [
@@ -413,13 +411,15 @@ export default {
       substepNotes: {
         1: 'Required to obtain the serum ingredient',
         2: 'Head left from the Wisp Tea machine and go down the stairs',
-        3: 'Look at the ground in front of the machine on the wall to your right and summon Klaus (Tactical slot) who will stomp the ground and cause a green light to appear on the machine',
-        4: 'Stay in the red circle that appears on the ground for 60 seconds',
-        5: 'Appears in a compartment beneath the scanner'
+        3: 'Look at the ground in front of the machine on the wall to your right and summon or direct Klaus (Tactical slot) who will stomp the ground and cause a green light to appear on the machine',
+        4: 'The player who activated the scanner must stay in the red circle that appears on the ground for 60 seconds',
+        5: 'Appears in a compartment next to the scanner'
       },
       
       tips: [
-        'The timer will go faster when facing the scanner. Balance facing the scanner and defending yourself.'
+        'If you\'ve already used Klaus or otherwise cannot summon him, use the radio (2,000 essence) to summon him',
+        'The timer will go faster when facing the scanner. Balance facing the scanner and defending yourself.',
+        'Use tacticals, turrets, field upgrades, and other defensive tools to help survive the challenge.'
       ],
       
       warnings: [
@@ -446,11 +446,12 @@ export default {
       },
       
       tips: [
-
+        'The player holding the barrel cannot sprint. Have Ol\' Tessie ready for transport.'
       ],
       
       warnings: [
-        'Don\'t fast travel! Using Jump Pads will cause you to drop the Aether Barrel.'
+        'Don\'t fast travel! Using Jump Pads will cause you to drop the Aether Barrel.',
+        'Don\'t delay! You have until the timer runs out to fill the barrel at all three locations. If you fail, you must repeat the Scanner Progress challenge again.'
       ]
     },
 
@@ -574,7 +575,10 @@ export default {
             { value: 'symbol5', label: 'Symbol', image: '/images/bo7z-symbol5.png' },
             { value: 'symbol6', label: 'Symbol', image: '/images/bo7z-symbol6.png' },
             { value: 'symbol7', label: 'Symbol', image: '/images/bo7z-symbol7.png' },
-            { value: 'symbol8', label: 'Symbol', image: '/images/bo7z-symbol8.png' }
+            { value: 'symbol8', label: 'Symbol', image: '/images/bo7z-symbol8.png' },
+            { value: 'symbol9', label: 'Symbol', image: '/images/bo7z-symbol9.png' },
+            { value: 'symbol10', label: 'Symbol', image: '/images/bo7z-symbol10.png' },
+            { value: 'symbol11', label: 'Symbol', image: '/images/bo7z-symbol11.png' },
           ],
           positions: 3
         }
@@ -598,7 +602,7 @@ export default {
       substepNotes: {
         0: 'Interact with the sides of the box so each displays one of the three symbols',
         1: 'Interact with the red eye on the box and collect the Necrofluid Gauntlet Wonder Weapon',
-        2: 'Remain in the green area and fire a spike from the Gauntlet at each of the glowing green orbs, reloading the recall the spikes and destroy the orbs'
+        2: 'Remain in the green area and fire a spike from the Gauntlet at each of the 6 glowing green orbs, reloading the recall the spikes and destroy the orbs'
       },
       
       tips: [
@@ -689,8 +693,8 @@ export default {
       substepNotes: {
         2: 'Next to the Arsenal machine',
         3: 'Kill zombies until your Wisp appears',
-        4: 'Approach the mirro in the Tailor Shop and watch as your Wisp enters it',
-        5: 'Shoot the mirror wit the Necrofluid Gauntlet to shatter it',
+        4: 'Approach the mirror in the Tailor Shop and watch as your Wisp enters it',
+        5: 'Shoot the mirror with the Necrofluid Gauntlet to shatter it',
         6: 'Appears on the ground after shattering the mirror'
         
       },
@@ -723,7 +727,8 @@ export default {
       substepNotes: {
         1: 'Located next to the M15 MOD 0 wall buy in a building marked by a red star',
         2: 'White powder located in a dish on the lab table in the back corner of the garage',
-        3: 'Three encoded ingredients will appear on the chalkboard above the table. '
+        3: 'Three encoded ingredients will appear on the chalkboard above the table.',
+        4: 'If you fail, you must wait until the next round to try again.'
         
       },
       
@@ -778,7 +783,7 @@ export default {
       
       warnings: [
         'Incoming! Zombies and Ravagers will spawn continuously during this step.',
-        'Protect the president! The player who adds blood to the beaker will have their health reduced by 75. Should they go down, lockdown will fail and you will need to wait until the next round to try again.'
+        'Protect the president! The player who adds blood to the beaker will have their health reduced to 75 and it will not regenerate. Should they go down, lockdown will fail and you will need to wait until the next round to try again.'
       ]
     }
   ],
