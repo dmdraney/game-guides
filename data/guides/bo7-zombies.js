@@ -48,7 +48,7 @@ export default {
       
       // Visual customization per step
       icon: '🤖',  // Optional emoji icon
-      color: '#fbbf24',  // Optional custom color for this step
+      color: '#f86403',  // Optional custom color for this step
       
       // Step content
       substeps: [
@@ -83,6 +83,7 @@ export default {
       title: 'Drive',
       description: 'Fog-Shrouded Zones',
       icon: '🌫️',
+      color: '#f89603ff',
       
       substeps: [
         'Get in Ol\' Tessie, turn left (southwest), and drive through the wooden barrier',
@@ -111,7 +112,7 @@ export default {
       title: 'Restore Power to the Cabin',
       description: 'Blackwater Lake',
       icon: '🏠',
-      color: '#8b5cf6',
+      color: '#f89603ff',
       
       substeps: [
         'Clear the infestation off the power pump',
@@ -181,7 +182,7 @@ export default {
       title: 'Install the Abomination Beam',
       description: 'Exit 115 & Ashwood',
       icon: '☄️',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Drive to Exit 115',
@@ -219,7 +220,7 @@ export default {
       title: 'Restore Power to Vandorn Farm',
       description: 'Vandorn Farm',
       icon: '🚜',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Drive to Vandorn Farm',
@@ -248,7 +249,7 @@ export default {
       title: 'Collect the Human Bones',
       description: 'Vandorn Farm',
       icon: '🦴',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Chop off the leg',
@@ -276,7 +277,7 @@ export default {
       title: 'Collect the Widow\'s Lantern',
       description: 'Vandorn Farm',
       icon: '🏮',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Use the Jar of Spores on the horse carcass',
@@ -303,7 +304,7 @@ export default {
       title: 'Collect the Ravager Eyes',
       description: 'Vandorn Farm',
       icon: '👁️',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Activate the Saw Trap to kill a Ravager',
@@ -329,7 +330,7 @@ export default {
       title: 'Defeat Uber Klaus',
       description: 'Janus Towers Plaza',
       icon: '🐻',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Drive to Janus Towers Plaza',
@@ -362,7 +363,7 @@ export default {
       title: 'Activate Friendly Klaus',
       description: 'Ashwood',
       icon: '🤝',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Drive to Ashwood',
@@ -396,7 +397,7 @@ export default {
       title: 'Collect the Aether Barrel',
       description: 'Zarya Cosmodrome',
       icon: '🛢️',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Drive to Zarya Cosmodrome',
@@ -432,7 +433,7 @@ export default {
       title: 'Fill the Aether Barrel at Blackwater Lake',
       description: 'Blackwater Lake',
       icon: '🏠',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Drive to Blackwater Lake',
@@ -460,7 +461,7 @@ export default {
       title: 'Fill the Aether Barrel at Ashwood',
       description: 'Ashwood',
       icon: '🚚',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Drive to Ashwood',
@@ -487,7 +488,7 @@ export default {
       title: 'Fill the Aether Barrel at Vandorn Farm',
       description: 'Vandorn Farm',
       icon: '🚜',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Drive to Vandorn Farm',
@@ -514,7 +515,7 @@ export default {
       title: 'Activate the Mysterious Box',
       description: 'Vandorn Farm',
       icon: '📦',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Go to the cellar under the barn',
@@ -540,7 +541,7 @@ export default {
       title: 'Find the Symbols for the Mysterious Box',
       description: 'Vandorn Farm',
       icon: '⚛️',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Note the symbol on the barn roof',
@@ -590,7 +591,7 @@ export default {
       title: 'Complete the Gauntlet Trial',
       description: 'Vandorn Farm',
       icon: '🥊',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Input symbols into the Mysterious Box',
@@ -619,7 +620,7 @@ export default {
       title: 'Collect the Hoard Husk Chunks',
       description: 'Fog-Shrouded Zones',
       icon: '🌫️',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Drive into the fog-shrouded zones between points of interest',
@@ -649,7 +650,7 @@ export default {
       title: 'Collect the Mysterious Limb',
       description: 'Anywhere',
       icon: '💪',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Kill Zursa',
@@ -677,7 +678,7 @@ export default {
       title: 'Collect the Powder of the Forgotten',
       description: 'Ashwood',
       icon: '💪',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Drive to Ashwood',
@@ -713,7 +714,7 @@ export default {
       title: 'Craft the Serum',
       description: 'Zarya Cosmodrome',
       icon: '🧪',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Drive to Zarya Cosmodrome',
@@ -747,11 +748,11 @@ export default {
           label: 'Serum Ingredients',
           description: 'Select the ingredients in the correct order',
           options: [
-            { value: 'ingredient1', label: 'Talus/Human Bones', image: '/images/talus.png' },
-            { value: 'ingredient2', label: 'Conch/Hoard Husk Chunks', image: '/images/conch.png' },
-            { value: 'ingredient3', label: 'Fungi/Widow\'s Lantern', image: '/images/fungi.png' },
-            { value: 'ingredient4', label: 'Oculi/Ravager Eyes', image: '/images/oculi.png' },
-            { value: 'ingredient5', label: 'Limbs/Mysterious Limb', image: '/images/limbs.png' }
+            { value: 'ingredient1', label: 'Talus/Human Bones', image: '/images/ingredient_talus.png' },
+            { value: 'ingredient2', label: 'Conch/Hoard Husk Chunks', image: '/images/ingredient_conch.png' },
+            { value: 'ingredient3', label: 'Fungi/Widow\'s Lantern', image: '/images/ingredient_fungi.png' },
+            { value: 'ingredient4', label: 'Oculi/Ravager Eyes', image: '/images/ingredient_oculi.png' },
+            { value: 'ingredient5', label: 'Limbs/Mysterious Limb', image: '/images/ingredient_limbs.png' }
           ],
           positions: 3
         }
@@ -763,7 +764,7 @@ export default {
       title: 'Survive the Lockdown',
       description: 'Zarya Cosmodrome',
       icon: '🚨',
-      color: '#dc2626',
+      color: '#f89603ff',
       
       substeps: [
         'Add blood to the beaker',
@@ -784,6 +785,238 @@ export default {
       warnings: [
         'Incoming! Zombies and Ravagers will spawn continuously during this step.',
         'Protect the president! The player who adds blood to the beaker will have their health reduced to 75 and it will not regenerate. Should they go down, lockdown will fail and you will need to wait until the next round to try again.'
+      ]
+    },
+
+    {
+      id: 24,
+      title: 'Collect the Yellow Bruin Key',
+      description: 'Fog-Shrouded Zones',
+      icon: '🗝️',
+      color: '#f89603ff',
+      
+      substeps: [
+        'Drive to the crashed rocket site between Ashwood and Zarya Cosmodrome',
+        'Search the metal tower fallen across the cliffs above road',
+        'Search the satellite tower building',
+        'Search the dirt ridge on the left side of the road when leaving Ashwood heading to Zarya Cosmodrome',
+        'Collect the Yellow Bruin Key'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+                
+      },
+      
+      tips: [
+        'Shoot the Necrofluid Gauntlet at the key and reload to retrieve it.'
+      ],
+      
+      warnings: [
+        'Debuffs! The player holding the Yellow Bruin Key will be forced to use melee only. Be careful not to get cornered.'
+      ]
+    },
+
+    {
+      id: 25,
+      title: 'Collect the Red Nightbird Key',
+      description: 'Fog-Shrouded Zones',
+      icon: '🗝️',
+      color: '#f89603ff',
+      
+      substeps: [
+        'Drive to Orda Graveyard between Ashwood and Exit 115',
+        'Search the large T-Rex skull on the ground',
+        'Search the T-Rex skull hanging off the ledge above the road',
+        'Search behind the black Janus truck outside of Exit 115',
+        'Collect the Red Nightbird Key'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+                
+      },
+      
+      tips: [
+        'Shoot the Necrofluid Gauntlet at the key and reload to retrieve it.'
+      ],
+      
+      warnings: [
+        'Debuffs! The player holding the Red Nightbird Key will have their health reduced and health regeneration disabled. Have Ol\' Tessie ready for transport.'
+      ]
+    },
+
+    {
+      id: 26,
+      title: 'Collect the Green Terapin Key',
+      description: 'Fog-Shrouded Zones',
+      icon: '🗝️',
+      color: '#f89603ff',
+      
+      substeps: [
+        'Drive to the Grounded Ship between Ashwood and Vandorn Farm',
+        'Search the partially opened blue shipping container',
+        'Search the window atop the ship next to the blue shipping container',
+        'Search behind the barrels in the hull of the ship',
+        'Collect the Green Terapin Key'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+                
+      },
+      
+      tips: [
+        'Shoot the Necrofluid Gauntlet at the key and reload to retrieve it.'
+      ],
+      
+      warnings: [
+        'Debuffs! The player holding the Green Terapin Key will be severely slowed. Have Ol\' Tessie ready for transport.'
+      ]
+    },
+
+    {
+      id: 27,
+      title: 'Install the DG-2 Turret',
+      description: 'Ashwood',
+      icon: '🔧',
+      color: '#f89603ff',
+      
+      substeps: [
+        'Drive to Ashwood',
+        'Interact with the Mysterious Cube in Rabbit Alley',
+        'Collect the DG-2 Turret Barrel',
+        'Install the DG-2 Turret on Ol\' Tessie'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        1: 'Each of the three keys unlocks a chain on the cube.',
+        3: 'Use the garage workbench'       
+      },
+      
+      tips: [
+        
+      ],
+      
+      warnings: [
+        
+      ]
+    },
+
+    {
+      id: 28,
+      title: 'Complete the Exit 115 Wisp Easter Egg',
+      description: 'Exit 115',
+      icon: '⚡',
+      color: '#f89603ff',
+      
+      substeps: [
+        'Shoot the clock with the DG-2 Turret',
+        'Shoot the clock with the Necrofluid Gauntlet',
+        'Drive to Exit 115',
+        'Summon Klaus at the diner',
+        'Shoot the large clock above the gas station',
+        'Wake the Trucker',
+        'Lure the Trucker into the red lightning',
+        'Wake the Waitress',
+        'Lure the Waitress into the purple lightning',
+        'Wake the machanic',
+        'Lure the Mechanic into the yellow lightning'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        0: 'Floating above the garage',
+        1: 'The Gauntlet will turn purple',
+        5: 'Shoot the door of the red shipping container with Ol\' Tessie\'s Abomination Beam',
+        6: 'Found on the gas station roof',
+        7: 'Melee the cash register in the diner',
+        8: 'Found on the diner roof',
+        9: 'Direct Klaus at the zombie beside the truck inside the service station',
+        10: 'Found on the service station roof'
+        
+      },
+      
+      tips: [
+        'If you fail, return to Ashwood and charge the Gauntlet on the clock again.',
+        'If a new round begins, you must shoot the clock again to recharge the Gauntlet.',
+        'You can charge the Gauntlet up to three times per round. Spinning clock faces indicate the three charges are expended and you must progress to the next round.',
+        'You do not need to lure all three zombies into the lightning in one go. If you miss any, try again on the next even-numbered round.',
+        'A wisp will appear when the easter egg has been completed successfully.'
+      ],
+      
+      warnings: [
+        'Round restricted! This step can only be completed on an even-numbered round. This is when lightning is present at Exit 115.',
+        'Act quickly! You have limited time after shooting the clock with the Gauntlet to complete the steps before the purple effect wears off.',
+        'Perk required! Purchase Melee Macchiato at Blackwater Lake before starting this step.',
+        'Limited time! Time is stopped for one minute, leaving little time to lure the zombies into the lightning.'
+      ]
+    },
+
+    {
+      id: 29,
+      title: 'Complete the Zarya Cosmodrome Wisp Easter Egg',
+      description: 'Zarya Cosmodrome',
+      icon: '🚀',
+      color: '#f89603ff',
+      
+      substeps: [
+        'Recharge the Necrofluid Gauntlet using the Ashwood clock',
+        'Drive to Zarya Cosmodrome',
+        'Shoot the two satellite dishes with the Necrofluid Gauntlet to slow them',
+        'Solve the pigpen cipher on the screens in the control room',
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+                
+      },
+      
+      tips: [
+        
+      ],
+      
+      warnings: [
+        
+      ],
+
+      interactiveFields: [
+        {
+          id: 'launch-symbols',
+          type: 'image-select',
+          label: 'Launch Code',
+          description: 'Select the sequence of symbols to decipher the launch code',
+          options: [
+            { value: 'value1', label: 'Symbol 1', image: '/images/launch_code_a.png' },
+            { value: 'value2', label: 'Symbol 2', image: '/images/launch_code_b.png' },
+            { value: 'value3', label: 'Symbol 3', image: '/images/launch_code_c.png' },
+            { value: 'value4', label: 'Symbol 4', image: '/images/launch_code_d.png' },
+            { value: 'value5', label: 'Symbol 5', image: '/images/launch_code_e.png' },
+            { value: 'value6', label: 'Symbol 6', image: '/images/launch_code_f.png' },
+            { value: 'value7', label: 'Symbol 7', image: '/images/launch_code_g.png' },
+            { value: 'value8', label: 'Symbol 8', image: '/images/launch_code_h.png' },
+            { value: 'value9', label: 'Symbol 9', image: '/images/launch_code_i.png' },
+            { value: 'value10', label: 'Symbol 10', image: '/images/launch_code_j.png' },
+            { value: 'value11', label: 'Symbol 11', image: '/images/launch_code_k.png' },
+            { value: 'value12', label: 'Symbol 12', image: '/images/launch_code_l.png' },
+            { value: 'value13', label: 'Symbol 13', image: '/images/launch_code_m.png' },
+            { value: 'value14', label: 'Symbol 14', image: '/images/launch_code_n.png' },
+            { value: 'value15', label: 'Symbol 15', image: '/images/launch_code_o.png' },
+            { value: 'value16', label: 'Symbol 16', image: '/images/launch_code_p.png' },
+            { value: 'value17', label: 'Symbol 17', image: '/images/launch_code_q.png' },
+            { value: 'value18', label: 'Symbol 18', image: '/images/launch_code_r.png' },
+            { value: 'value19', label: 'Symbol 19', image: '/images/launch_code_s.png' },
+            { value: 'value20', label: 'Symbol 20', image: '/images/launch_code_t.png' },
+            { value: 'value21', label: 'Symbol 21', image: '/images/launch_code_u.png' },
+            { value: 'value22', label: 'Symbol 22', image: '/images/launch_code_v.png' },
+            { value: 'value23', label: 'Symbol 23', image: '/images/launch_code_w.png' },
+            { value: 'value24', label: 'Symbol 24', image: '/images/launch_code_x.png' },
+            { value: 'value25', label: 'Symbol 25', image: '/images/launch_code_y.png' },
+            { value: 'value26', label: 'Symbol 26', image: '/images/launch_code_z.png' }
+          ],
+          positions: 6
+        }
       ]
     }
   ],
