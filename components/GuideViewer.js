@@ -326,10 +326,10 @@ export default function GuideViewer({ guide }) {
     const value = getInteractiveValue(stepId, field.id) || [];
     
     const addToSequence = (optionValue) => {
-      if (value.length < field.positions && !value.includes(optionValue)) {
-        updateInteractiveField(stepId, field.id, [...value, optionValue]);
-      }
-    };
+  if (value.length < field.positions) {
+    updateInteractiveField(stepId, field.id, [...value, optionValue]);
+  }
+};
     
     const removeFromSequence = (index) => {
       const newValue = value.filter((_, i) => i !== index);
@@ -497,9 +497,9 @@ export default function GuideViewer({ guide }) {
             gap: '0.75rem'
           }}>
             {field.options.map(option => {
-              const isUsed = value.includes(option.value);
               const isFull = value.length >= field.positions;
-              const isDisabled = isUsed || isFull;
+              const isDisabled = isFull;
+              const timesUsed = value.filter(v => v === option.value).length;
               
               return (
                 <button
@@ -508,10 +508,10 @@ export default function GuideViewer({ guide }) {
                   disabled={isDisabled}
                   style={{
                     padding: '0.5rem',
-                    background: isUsed 
-                      ? 'rgba(255,255,255,0.05)' 
+                    background: timesUsed > 0
+                      ? `${guide.theme.primary}10`
                       : guide.theme.card,
-                    border: `2px solid ${isUsed ? '#475569' : guide.theme.primary}`,
+                    border: `2px solid ${timesUsed > 0 ? guide.theme.primary : '#475569'}`,
                     borderRadius: '0.75rem',
                     cursor: isDisabled ? 'not-allowed' : 'pointer',
                     opacity: isDisabled ? 0.4 : 1,
@@ -559,26 +559,30 @@ export default function GuideViewer({ guide }) {
                     fontSize: '0.75rem',
                     textAlign: 'center',
                     marginTop: '0.5rem',
-                    opacity: isDisabled ? 0.5 : 0.8,
+                    opacity: isFull ? 0.5 : 0.8,
                     lineHeight: 1.2,
                     color: guide.theme.text
                   }}>
                     {option.label}
                   </div>
-                  {isUsed && (
+                  {timesUsed > 0 && (
                     <div style={{
                       position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      background: 'rgba(0,0,0,0.8)',
+                      top: '0.5rem',
+                      right: '0.5rem',
+                      background: guide.theme.primary,
                       color: 'white',
-                      padding: '0.25rem 0.5rem',
-                      borderRadius: '0.25rem',
-                      fontSize: '0.625rem',
-                      fontWeight: 'bold'
+                      width: '24px',
+                      height: '24px',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '0.75rem',
+                      fontWeight: 'bold',
+                      boxShadow: '0 2px 4px rgba(0,0,0,0.3)'
                     }}>
-                      USED
+                      {timesUsed}
                     </div>
                   )}
                 </button>
