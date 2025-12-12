@@ -966,15 +966,17 @@ export default {
         'Drive to Zarya Cosmodrome',
         'Shoot the two satellite dishes with the Necrofluid Gauntlet to slow them',
         'Solve the pigpen cipher on the screens in the control room',
+        'Input the launch code on the bank of computers in the control room to launch the rocket'
       ],
 
       // Optional: Checklist items can have notes
       substepNotes: {
-                
+        3: 'The symbols will spell a 6-letter word, and each letter in the word corresponds to a number in the launch code',
+        4: 'Interact with each computer when the correct number appears'
       },
       
       tips: [
-        
+        'Use the section below to track your symbols and decipher the launch code. The code will be one of four words: Engine: (4, 13, 6, 8, 13, 4), Launch: (11, 0, 20, 13, 2, 7), Rocket: (17, 14, 2, 10, 4, 19), Weapon: (22, 4, 0, 15, 14, 13)'
       ],
       
       warnings: [
@@ -1018,6 +1020,51 @@ export default {
           positions: 6
         }
       ]
+    },
+
+    {
+      id: 30,
+      title: 'Complete the Vandorn Farm Wisp Easter Egg',
+      description: 'Vandorn Farm',
+      icon: '👨‍🌾',
+      color: '#f89603ff',
+      
+      substeps: [
+        'Recharge the Necrofluid Gauntlet using the Ashwood clock',
+        'Drive to Vandorn Farm',
+        'Note the hour on the wall clock in the farmhouse dining room',
+        'Stand on the roman numeral matching the hour',
+        'Shoot the zombie at the head of the table with the Necrofluid Gauntlet after his eyes turn red',
+        'Collect the Teddy Bear',
+        'Collect the mask',
+        'Collect the chalice',
+        'Collect Pa\'s Pigsticker',
+        'Place the four items in the glowing red circles at the center of the farm',
+        'Interact with one of the items to start the Ritual defence challenge',
+        'Complete the Ritual defence challenge'
+
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        3: 'The numerals are on the floor around the dining table',
+        4: 'Spawns items around the farm',
+        5: 'Located on the bottom bunk, upstairs in the farmhouse',
+        6: 'Located above the crafting bench on the second floor of the barn by the hay bales',
+        7: 'Located in the cellar by the bathtub',
+        8: 'Located under the workbench in the garage',
+        11: 'Protect each item from waves of zombies until the ritual is complete'
+        
+      },
+      
+      tips: [
+        'Use turrets, Cymbol Monkeys, and the Saw Trap to help defend the items during the ritual.',
+        'Assign a player to each item if playing in a full squad. Otherwise, use the Necroflud Gauntlet to proactively fire spines at the items and reload to recall them when zombies get close.'
+      ],
+      
+      warnings: [
+        
+      ]
     }
   ],
   
@@ -1036,5 +1083,5 @@ export default {
   
   // Version for tracking updates
   version: '1.0',
-  lastUpdated: '2025-12-04'
+  lastUpdated: '2025-12-12'
 };
