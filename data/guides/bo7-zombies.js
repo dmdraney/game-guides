@@ -92,12 +92,12 @@ export default {
       ],
       
       tips: [
-        'Drive over yellow clusters to heal Ol\' Tessie'
+        'Drive over yellow clusters to heal Ol\' Tessie and gain essence or salvage'
       ],
 
       // Warnings (shown in red/orange)
       warnings: [
-        'Stay in the truck! Agile, four-legged Ravagers prowl the fog-shrouded areas between points of interest. They will latch onto moving vehicles, even at high speeds, and can quickly damage Ol\' Tessie and players.',
+        'Stay in the truck! Agile, four-legged Ravagers prowl the areas between points of interest. They will latch onto moving vehicles, even at high speeds, and can quickly damage Ol\' Tessie and players.',
         'Avoid orange clusters! Impact will cause an explosion, which will damage Ol\' Tessie'
       ],
       
@@ -291,7 +291,7 @@ export default {
       },
       
       tips: [
-        'This step takes three rounds. Try to complete the next step (Ravager Eyes) while you wait.'
+        'This step takes two full rounds. Try to complete the next step (Ravager Eyes) while you wait.'
       ],
       
       warnings: [
@@ -307,7 +307,7 @@ export default {
       color: '#f89603ff',
       
       substeps: [
-        'Activate the Saw Trap to kill a Ravager',
+        'Activate any Saw Trap to kill a Ravager',
         'Collect the Ravager Eyes dropped by the Ravager'
       ],
 
@@ -317,7 +317,7 @@ export default {
       },
       
       tips: [
-        'Do this step on Round 5 or 10, which are both special Ravager rounds'
+        'Do this step on Round 5-6 or 10-11, which are both special Ravager rounds'
       ],
       
       warnings: [
@@ -355,7 +355,7 @@ export default {
       ],
 
       // Boss strategy
-      strategy: 'Keep your distance! Uber Klause will charge at players who get too close. Keep moving to avoid his AoE jump attack. Aim at the purple glowing parts on his shoulders, which weaken him when broken. '
+      strategy: 'Keep your distance! Uber Klause will charge at players who get too close. Keep moving to avoid his AoE jump attack and energy mines. Aim at the purple glowing parts on his shoulders, which weaken him when broken. '
     },
 
     {
@@ -378,7 +378,7 @@ export default {
         1: 'East zipline',
         2: 'Located at the back of the Square to the left',
         3: 'Interact with the device on the cell door (screen will read, "update requires restart")',
-        4:  'Throw 2-4 stun grenades at Klaus in quick succession until he is activated and moving about the cell'
+        4:  'Throw 2-4 stun grenades at Klaus in quick succession until he is activated (stunned) and moving about the cell'
       },
       
       tips: [
@@ -410,7 +410,7 @@ export default {
 
       // Optional: Checklist items can have notes
       substepNotes: {
-        1: 'Required to obtain the serum ingredient',
+        1: 'Required to obtain a serum ingredient',
         2: 'Head left from the Wisp Tea machine and go down the stairs',
         3: 'Look at the ground in front of the machine on the wall to your right and summon or direct Klaus (Tactical slot) who will stomp the ground and cause a green light to appear on the machine',
         4: 'The player who activated the scanner must stay in the red circle that appears on the ground for 60 seconds',
@@ -419,12 +419,13 @@ export default {
       
       tips: [
         'If you\'ve already used Klaus or otherwise cannot summon him, use the radio (2,000 essence) to summon him',
+        'Use your tactical key/button when Klaus is already active to direct him to a specific location',
         'The timer will go faster when facing the scanner. Balance facing the scanner and defending yourself.',
         'Use tacticals, turrets, field upgrades, and other defensive tools to help survive the challenge.'
       ],
       
       warnings: [
-        'Stay in the circle! Moving out of the red circle will cause you to fail the Scan Progress challenge, and you will need to wait until the next round to try again.'
+        'Stay in the circle! If the player who activated the scanner moves out of the red circle, you will fail the Scan Progress challenge, and you will need to wait until the next round to try again.'
       ]
     },
 
@@ -452,7 +453,7 @@ export default {
       
       warnings: [
         'Don\'t fast travel! Using Jump Pads will cause you to drop the Aether Barrel.',
-        'Don\'t delay! You have until the timer runs out to fill the barrel at all three locations. If you fail, you must repeat the Scanner Progress challenge again.'
+        'Don\'t delay! After the first fill-up, you have until the timer runs out to fill the barrel at the other two locations. If you fail, you must repeat the Scanner Progress challenge again.'
       ]
     },
 
@@ -555,7 +556,7 @@ export default {
       },
       
       tips: [
-        'Take a screenshot after using the Jump Pad while viewing the farm rooftops to help remember the symbols'
+        'Take a screenshot after using the Jump Pad while viewing the farm rooftops if you have trouble remembering the symbols'
       ],
       
       warnings: [
@@ -603,7 +604,7 @@ export default {
       substepNotes: {
         0: 'Interact with the sides of the box so each displays one of the three symbols',
         1: 'Interact with the red eye on the box and collect the Necrofluid Gauntlet Wonder Weapon',
-        2: 'Remain in the green area and fire a spike from the Gauntlet at each of the 6 glowing green orbs, reloading the recall the spikes and destroy the orbs'
+        2: 'Fire a spike from the Gauntlet at each of the 6 glowing green orbs and reload to recall the spikes and destroy the orbs'
       },
       
       tips: [
@@ -611,7 +612,7 @@ export default {
       ],
       
       warnings: [
-        'Be prepared! The trial will start as soon as a player collects the Necrofluid Gauntlet.'
+        'Be prepared! The trial will start as soon as a player collects the Necrofluid Gauntlet, and the player performing the challenge cannot leave the green circle.'
       ]
     },
 
@@ -631,7 +632,7 @@ export default {
 
       // Optional: Checklist items can have notes
       substepNotes: {
-        1: 'Glowing purple masses along the road',
+        1: 'Glowing purple masses along the road between zones',
         2: 'Use Ol\' Tessie\'s Abomination Beam to destroy the Husk'
         
       },
@@ -659,13 +660,14 @@ export default {
 
       // Optional: Checklist items can have notes
       substepNotes: {
-        0: 'Use the Abomination Beam to deal the final blow',
+        0: 'The Abomination Beam must deal the final blow',
         1: 'Dropped on the ground after killing Zursa'
         
       },
       
       tips: [
-        'Zursa spawns at Round 16 and every few rounds thereafter. It can appear anywhere on the map.'
+        'Zursa spawns at Round 16 and every few rounds thereafter. It can appear anywhere on the map.',
+        'If you collect the Powder of the Forgotten first, you can check the code in Yuri\'s Lab (step 22) to see if the limb is required. If not, you can skip this step.'
       ],
       
       warnings: [
@@ -683,7 +685,7 @@ export default {
       substeps: [
         'Drive to Ashwood',
         'Ascend the zipline to Market Square',
-        'Open the door to the Tailor Shop (1,250 essence)',
+        'Go to the Tailor Shop',
         'Activate your Wisp',
         'Activate the mirror',
         'Shatter the mirror',
@@ -701,7 +703,8 @@ export default {
       },
       
       tips: [
-        'Ensure you have the Wisp Tea perk-a-cola before attempting this step.'
+        'Ensure you have the Wisp Tea perk-a-cola before attempting this step.',
+        'Wisp Tea has a cooldown timer. If your wisp doesn\'t appear, wait a few minutes and kill again to summon it.'
       ],
       
       warnings: [
@@ -779,7 +782,9 @@ export default {
       },
       
       tips: [
-        'Prepare yourself before starting this step. Buy tier 3 armor, pack-a-punch the Necrofluid Gauntlet twice, buy Jugger-Nog and other colas, buy a self-revive kit, buy a point turret, and buy stun grenades.'
+        'Prepare yourself before starting this step. Buy tier 3 armor, pack-a-punch the Necrofluid Gauntlet twice, buy Jugger-Nog and other colas, buy a self-revive kit, buy a point turret, and buy stun grenades.',
+        'The vulnerable player can stand in the corner adjacent to the lab table and by the room\'s entrance to maximize space between spawn areas.',
+        'Fire preemptive barbs from the Necrofluid Gauntlet at the spawn areas and reload to recall them when zombies begin to appear.'
       ],
       
       warnings: [
@@ -809,7 +814,8 @@ export default {
       },
       
       tips: [
-        'Shoot the Necrofluid Gauntlet at the key and reload to retrieve it.'
+        'Shoot the Necrofluid Gauntlet at the key and reload to retrieve it.',
+        'Keys and their debuffs can be offloaded by using them on the Mysterious Box (step 27) before hunting for the next key.'
       ],
       
       warnings: [
@@ -906,17 +912,44 @@ export default {
 
     {
       id: 28,
+      title: 'Charge the Necrofluid Gauntlet',
+      description: 'Ashwood',
+      icon: '🕙',
+      color: '#f89603ff',
+      
+      substeps: [
+        'Shoot the clock with the DG-2 Turret',
+        'Shoot one of the clock faces with the Necrofluid Gauntlet',
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        0: 'Floating above the garage',
+        1: 'The Gauntlet will turn purple',      
+      },
+      
+      tips: [
+        'The charge only lasts for one shot. Return to Ashwood and charge the Gauntlet on the clock again.',
+        'If a new round begins, you must shoot the clock again to recharge the Gauntlet.',
+        'You can charge the Gauntlet up to three times per round (once per visible clock face). Spinning clock faces indicate the three charges are expended and you must progress to the next round.',
+      ],
+      
+      warnings: [
+        
+      ]
+    },
+
+    {
+      id: 29,
       title: 'Complete the Exit 115 Wisp Easter Egg',
       description: 'Exit 115',
       icon: '⚡',
       color: '#f89603ff',
       
       substeps: [
-        'Shoot the clock with the DG-2 Turret',
-        'Shoot the clock with the Necrofluid Gauntlet',
         'Drive to Exit 115',
         'Summon Klaus at the diner',
-        'Shoot the large clock above the gas station',
+        'Shoot the large clock above the gas station with the charged Necrofluid Gauntlet',
         'Wake the Trucker',
         'Lure the Trucker into the red lightning',
         'Wake the Waitress',
@@ -927,21 +960,16 @@ export default {
 
       // Optional: Checklist items can have notes
       substepNotes: {
-        0: 'Floating above the garage',
-        1: 'The Gauntlet will turn purple',
-        5: 'Shoot the door of the red shipping container with Ol\' Tessie\'s Abomination Beam',
-        6: 'Found on the gas station roof',
-        7: 'Melee the cash register in the diner',
-        8: 'Found on the diner roof',
-        9: 'Direct Klaus at the zombie beside the truck inside the service station',
-        10: 'Found on the service station roof'
+        3: 'Shoot the door of the red shipping container with Ol\' Tessie\'s Abomination Beam',
+        4: 'Found on the gas station roof',
+        5: 'Melee the cash register in the diner',
+        6: 'Found on the diner roof',
+        7: 'Direct Klaus at the zombie beside the truck inside the service station',
+        8: 'Found on the service station roof'
         
       },
       
       tips: [
-        'If you fail, return to Ashwood and charge the Gauntlet on the clock again.',
-        'If a new round begins, you must shoot the clock again to recharge the Gauntlet.',
-        'You can charge the Gauntlet up to three times per round. Spinning clock faces indicate the three charges are expended and you must progress to the next round.',
         'You do not need to lure all three zombies into the lightning in one go. If you miss any, try again on the next even-numbered round.',
         'A wisp will appear when the easter egg has been completed successfully.'
       ],
@@ -949,13 +977,12 @@ export default {
       warnings: [
         'Round restricted! This step can only be completed on an even-numbered round. This is when lightning is present at Exit 115.',
         'Act quickly! You have limited time after shooting the clock with the Gauntlet to complete the steps before the purple effect wears off.',
-        'Perk required! Purchase Melee Macchiato at Blackwater Lake before starting this step.',
         'Limited time! Time is stopped for one minute, leaving little time to lure the zombies into the lightning.'
       ]
     },
 
     {
-      id: 29,
+      id: 30,
       title: 'Complete the Zarya Cosmodrome Wisp Easter Egg',
       description: 'Zarya Cosmodrome',
       icon: '🚀',
@@ -991,31 +1018,31 @@ export default {
           description: 'Select the sequence of symbols to decipher the launch code',
           options: [
             { value: 'value1', label: 'Symbol 1', image: '/images/launch_code_a.png' },
-            { value: 'value2', label: 'Symbol 2', image: '/images/launch_code_b.png' },
+            // { value: 'value2', label: 'Symbol 2', image: '/images/launch_code_b.png' },
             { value: 'value3', label: 'Symbol 3', image: '/images/launch_code_c.png' },
-            { value: 'value4', label: 'Symbol 4', image: '/images/launch_code_d.png' },
+            // { value: 'value4', label: 'Symbol 4', image: '/images/launch_code_d.png' },
             { value: 'value5', label: 'Symbol 5', image: '/images/launch_code_e.png' },
-            { value: 'value6', label: 'Symbol 6', image: '/images/launch_code_f.png' },
+            // { value: 'value6', label: 'Symbol 6', image: '/images/launch_code_f.png' },
             { value: 'value7', label: 'Symbol 7', image: '/images/launch_code_g.png' },
             { value: 'value8', label: 'Symbol 8', image: '/images/launch_code_h.png' },
             { value: 'value9', label: 'Symbol 9', image: '/images/launch_code_i.png' },
-            { value: 'value10', label: 'Symbol 10', image: '/images/launch_code_j.png' },
+            // { value: 'value10', label: 'Symbol 10', image: '/images/launch_code_j.png' },
             { value: 'value11', label: 'Symbol 11', image: '/images/launch_code_k.png' },
             { value: 'value12', label: 'Symbol 12', image: '/images/launch_code_l.png' },
-            { value: 'value13', label: 'Symbol 13', image: '/images/launch_code_m.png' },
+            // { value: 'value13', label: 'Symbol 13', image: '/images/launch_code_m.png' },
             { value: 'value14', label: 'Symbol 14', image: '/images/launch_code_n.png' },
             { value: 'value15', label: 'Symbol 15', image: '/images/launch_code_o.png' },
             { value: 'value16', label: 'Symbol 16', image: '/images/launch_code_p.png' },
-            { value: 'value17', label: 'Symbol 17', image: '/images/launch_code_q.png' },
+            // { value: 'value17', label: 'Symbol 17', image: '/images/launch_code_q.png' },
             { value: 'value18', label: 'Symbol 18', image: '/images/launch_code_r.png' },
-            { value: 'value19', label: 'Symbol 19', image: '/images/launch_code_s.png' },
+            // { value: 'value19', label: 'Symbol 19', image: '/images/launch_code_s.png' },
             { value: 'value20', label: 'Symbol 20', image: '/images/launch_code_t.png' },
             { value: 'value21', label: 'Symbol 21', image: '/images/launch_code_u.png' },
-            { value: 'value22', label: 'Symbol 22', image: '/images/launch_code_v.png' },
+            // { value: 'value22', label: 'Symbol 22', image: '/images/launch_code_v.png' },
             { value: 'value23', label: 'Symbol 23', image: '/images/launch_code_w.png' },
-            { value: 'value24', label: 'Symbol 24', image: '/images/launch_code_x.png' },
-            { value: 'value25', label: 'Symbol 25', image: '/images/launch_code_y.png' },
-            { value: 'value26', label: 'Symbol 26', image: '/images/launch_code_z.png' }
+            // { value: 'value24', label: 'Symbol 24', image: '/images/launch_code_x.png' },
+            // { value: 'value25', label: 'Symbol 25', image: '/images/launch_code_y.png' },
+            // { value: 'value26', label: 'Symbol 26', image: '/images/launch_code_z.png' }
           ],
           positions: 6
         }
@@ -1023,7 +1050,7 @@ export default {
     },
 
     {
-      id: 30,
+      id: 31,
       title: 'Complete the Vandorn Farm Wisp Easter Egg',
       description: 'Vandorn Farm',
       icon: '👨‍🌾',
@@ -1060,6 +1087,132 @@ export default {
       tips: [
         'Use turrets, Cymbol Monkeys, and the Saw Trap to help defend the items during the ritual.',
         'Assign a player to each item if playing in a full squad. Otherwise, use the Necroflud Gauntlet to proactively fire spines at the items and reload to recall them when zombies get close.'
+      ],
+      
+      warnings: [
+        
+      ]
+    },
+
+    {
+      id: 32,
+      title: 'Complete the Blackwater Lake Wisp Easter Egg',
+      description: 'Blackwater Lake',
+      icon: '📽️',
+      color: '#f89603ff',
+      
+      substeps: [
+        'Recharge the Necrofluid Gauntlet using the Ashwood clock',
+        'Drive to Blackwater Lake',
+        'Interact with the wisp on the dock behind the cabin',
+        'Shoot the film projector inside the cabin with the charged Necrofluid Gauntlet',
+        'Memorize the sequence of locations displayed on the screen',
+        'Shoot the film canister hidden at each location in the correct order with the Necrofluid Gauntlet',
+        'Interact with the wisp on the second floor of the cabin',
+        'Summon Klaus using the radio on the back porch',
+        'Direct Klaus to where the wisp appeared in front of the box on the table at the foot of the bed',
+        'Interact with the box'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        5: 'Locations are: on top of the second floor cabinet, on the toolshed shelf, in the boatshed rafters, and under the back cabin stairs by the ammo cache'
+      },
+      
+      tips: [
+        
+      ],
+      
+      warnings: [
+        
+      ]
+    },
+
+    {
+      id: 33,
+      title: 'Prepare for the Boss Fight',
+      description: '',
+      icon: '🛡️',
+      color: '#f89603ff',
+      
+      substeps: [
+        'Pack-a-Punch weapons',
+        'Stock gear and ammo',
+        'Charge field upgrades',
+        'Stock gobblegum',
+        'Purchase Perk-a-Colas'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        0: 'Recommended: Two Pack-a-Punch level III weapons, preferrably the Necrofluid Gauntlet or Ray Gun',
+        1: 'Recommended: Stim Shot to mitigate the boss\'s significant damage and Cymbal Monkeys for crowd control',
+        2: 'Recommended: Healing Aura to help with team healing',
+        3: 'Recommended: Aftertaste, Phoenix Up, and Near Death Experience for revives, and Shields Up, Idle Eyes for protection'
+      },
+      
+      tips: [
+        
+      ],
+      
+      warnings: [
+        
+      ]
+    },
+
+    {
+      id: 34,
+      title: 'Unlock the Boss Area',
+      description: 'Fog-Shrouded Zones',
+      icon: '🔓',
+      color: '#f89603ff',
+      
+      substeps: [
+        'Interact with Klaus behind the Blackwater Lake cabin',
+        'Drive Ol\' Tessie toward Janus Towers Plaza',
+        'Collect three red and white wisps in Monolith Forest',
+        'Collect three wisps at the Collapsed Tower',
+        'Collect three wisps at the Grounded Ship',
+        'Collect three wisps at the Lost Cabins'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        
+      },
+      
+      tips: [
+        
+      ],
+      
+      warnings: [
+        'Collect them all! All three wisps must be collected in each area before moving to the next area.'
+      ]
+    },
+
+    {
+      id: 35,
+      title: 'Defeat Vaytharion',
+      description: '???',
+      icon: '💀',
+      color: '#f89603ff',
+      
+      substeps: [
+        'Use the ramps to slam Ol\' Tessie into Vaytharion\'s glowing red spots or shoot them with the DG-2 Turret',
+        'When Vaytharion becomes immune, drive Ol\' Tessie into the purple beam to gain a boost, then ram Vaytharion again',
+        'After stunning Vaytharion, shoot the yellow weak spot underneath him',
+        'When Vaytharion charges his purple beam at a quarter health, ram him to interrupt the attack',
+        'Damage Vaytharion until defeated',
+        'After the battle, choose to continue and return to Blackwater Lake to unlock Cursed mode by interacting with the Mysterious Object behind the dock'
+      ],
+
+      // Optional: Checklist items can have notes
+      substepNotes: {
+        
+      },
+      
+      tips: [
+        
       ],
       
       warnings: [
