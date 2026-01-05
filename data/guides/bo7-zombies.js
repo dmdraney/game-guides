@@ -36,7 +36,7 @@ export default {
   
   // Requirements (optional)
   requirements: [
-    'Stun Grenades',
+    'While not strictly required, one player with Stun Grenades in their loadout will reduce the time and salvage spent crafting them. Other players with Molotovs and Combat Axes will also relieve you of having to pick them up or craft them. The Frenzied Guard field upgrade is also helpful for crowd control during power pump clears, defense challenges, and the lockdown step.',
   ],
   
   // Steps with enhanced features
@@ -48,7 +48,7 @@ export default {
       
       // Visual customization per step
       icon: '🤖',  // Optional emoji icon
-      color: '#f86403',  // Optional custom color for this step
+      color: '#f89603',  // Optional custom color for this step
       
       // Step content
       substeps: [
@@ -83,7 +83,7 @@ export default {
       title: 'Drive',
       description: 'Fog-Shrouded Zones',
       icon: '🌫️',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Get in Ol\' Tessie, turn left (southwest), and drive through the wooden barrier',
@@ -112,7 +112,7 @@ export default {
       title: 'Restore Power to the Cabin',
       description: 'Blackwater Lake',
       icon: '🏠',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Clear the infestation off the power pump',
@@ -148,7 +148,7 @@ export default {
       title: 'Restore Power to Ashwood',
       description: 'Ashwood',
       icon: '🚚',
-      color: '#ef4444',
+      color: '#f89603',
       
       substeps: [
         'Drive to Ashwood',
@@ -182,7 +182,7 @@ export default {
       title: 'Install the Abomination Beam',
       description: 'Exit 115 & Ashwood',
       icon: '☄️',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Drive to Exit 115',
@@ -220,7 +220,7 @@ export default {
       title: 'Restore Power to Vandorn Farm',
       description: 'Vandorn Farm',
       icon: '🚜',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Drive to Vandorn Farm',
@@ -249,7 +249,7 @@ export default {
       title: 'Collect the Human Bones',
       description: 'Vandorn Farm',
       icon: '🦴',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Chop off the leg',
@@ -277,7 +277,7 @@ export default {
       title: 'Collect the Widow\'s Lantern',
       description: 'Vandorn Farm',
       icon: '🏮',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Use the Jar of Spores on the horse carcass',
@@ -304,7 +304,7 @@ export default {
       title: 'Collect the Ravager Eyes',
       description: 'Vandorn Farm',
       icon: '👁️',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Activate any Saw Trap to kill a Ravager',
@@ -330,7 +330,7 @@ export default {
       title: 'Defeat Uber Klaus',
       description: 'Janus Towers Plaza',
       icon: '🐻',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Drive to Janus Towers Plaza',
@@ -363,7 +363,7 @@ export default {
       title: 'Activate Friendly Klaus',
       description: 'Ashwood',
       icon: '🤝',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Drive to Ashwood',
@@ -397,7 +397,7 @@ export default {
       title: 'Collect the Aether Barrel',
       description: 'Zarya Cosmodrome',
       icon: '🛢️',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Drive to Zarya Cosmodrome',
@@ -434,7 +434,7 @@ export default {
       title: 'Fill the Aether Barrel at Blackwater Lake',
       description: 'Blackwater Lake',
       icon: '🏠',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Drive to Blackwater Lake',
@@ -462,7 +462,7 @@ export default {
       title: 'Fill the Aether Barrel at Ashwood',
       description: 'Ashwood',
       icon: '🚚',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Drive to Ashwood',
@@ -489,7 +489,7 @@ export default {
       title: 'Fill the Aether Barrel at Vandorn Farm',
       description: 'Vandorn Farm',
       icon: '🚜',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Drive to Vandorn Farm',
@@ -516,7 +516,7 @@ export default {
       title: 'Activate the Mysterious Box',
       description: 'Vandorn Farm',
       icon: '📦',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Go to the cellar under the barn',
@@ -542,7 +542,7 @@ export default {
       title: 'Find the Symbols for the Mysterious Box',
       description: 'Vandorn Farm',
       icon: '⚛️',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Note the symbol on the barn roof',
@@ -592,7 +592,7 @@ export default {
       title: 'Complete the Gauntlet Trial',
       description: 'Vandorn Farm',
       icon: '🥊',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Input symbols into the Mysterious Box',
@@ -621,7 +621,7 @@ export default {
       title: 'Collect the Hoard Husk Chunks',
       description: 'Fog-Shrouded Zones',
       icon: '🌫️',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Drive into the fog-shrouded zones between points of interest',
@@ -651,7 +651,7 @@ export default {
       title: 'Collect the Mysterious Limb',
       description: 'Anywhere',
       icon: '💪',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Kill Zursa',
@@ -680,7 +680,7 @@ export default {
       title: 'Collect the Powder of the Forgotten',
       description: 'Ashwood',
       icon: '💪',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Drive to Ashwood',
@@ -717,7 +717,7 @@ export default {
       title: 'Craft the Serum',
       description: 'Zarya Cosmodrome',
       icon: '🧪',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Drive to Zarya Cosmodrome',
@@ -767,7 +767,7 @@ export default {
       title: 'Survive the Lockdown',
       description: 'Zarya Cosmodrome',
       icon: '🚨',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Add blood to the beaker',
@@ -798,7 +798,7 @@ export default {
       title: 'Collect the Yellow Bruin Key',
       description: 'Fog-Shrouded Zones',
       icon: '🗝️',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Drive to the crashed rocket site between Ashwood and Zarya Cosmodrome',
@@ -828,7 +828,7 @@ export default {
       title: 'Collect the Red Nightbird Key',
       description: 'Fog-Shrouded Zones',
       icon: '🗝️',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Drive to Orda Graveyard between Ashwood and Exit 115',
@@ -857,7 +857,7 @@ export default {
       title: 'Collect the Green Terapin Key',
       description: 'Fog-Shrouded Zones',
       icon: '🗝️',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Drive to the Grounded Ship between Ashwood and Vandorn Farm',
@@ -886,7 +886,7 @@ export default {
       title: 'Install the DG-2 Turret',
       description: 'Ashwood',
       icon: '🔧',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Drive to Ashwood',
@@ -915,7 +915,7 @@ export default {
       title: 'Charge the Necrofluid Gauntlet',
       description: 'Ashwood',
       icon: '🕙',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Shoot the clock with the DG-2 Turret',
@@ -944,7 +944,7 @@ export default {
       title: 'Complete the Exit 115 Wisp Easter Egg',
       description: 'Exit 115',
       icon: '⚡',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Drive to Exit 115',
@@ -986,7 +986,7 @@ export default {
       title: 'Complete the Zarya Cosmodrome Wisp Easter Egg',
       description: 'Zarya Cosmodrome',
       icon: '🚀',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Recharge the Necrofluid Gauntlet using the Ashwood clock',
@@ -1054,7 +1054,7 @@ export default {
       title: 'Complete the Vandorn Farm Wisp Easter Egg',
       description: 'Vandorn Farm',
       icon: '👨‍🌾',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Recharge the Necrofluid Gauntlet using the Ashwood clock',
@@ -1099,7 +1099,7 @@ export default {
       title: 'Complete the Blackwater Lake Wisp Easter Egg',
       description: 'Blackwater Lake',
       icon: '📽️',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Recharge the Necrofluid Gauntlet using the Ashwood clock',
@@ -1133,7 +1133,7 @@ export default {
       title: 'Prepare for the Boss Fight',
       description: '',
       icon: '🛡️',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Pack-a-Punch weapons',
@@ -1165,7 +1165,7 @@ export default {
       title: 'Unlock the Boss Area',
       description: 'Fog-Shrouded Zones',
       icon: '🔓',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Interact with Klaus behind the Blackwater Lake cabin',
@@ -1195,7 +1195,7 @@ export default {
       title: 'Defeat Vaytharion',
       description: '???',
       icon: '💀',
-      color: '#f89603ff',
+      color: '#f89603',
       
       substeps: [
         'Use the ramps to slam Ol\' Tessie into Vaytharion\'s glowing red spots or shoot them with the DG-2 Turret',
