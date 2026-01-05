@@ -1,6 +1,6 @@
 export default {
   // Basic Info
-  slug: 'bo7-zombies-easter-egg',
+  slug: 'bo7-zombies-aotd-easter-egg',
   title: 'Black Ops 7 Zombies: Ashes of the Damned',
   subtitle: 'Complete Walkthrough',
   description: 'Step-by-step guide to completing the main easter egg quest with all secrets revealed',
@@ -30,7 +30,7 @@ export default {
   
   // Meta Information
   difficulty: 'Hard',        // Shown on homepage card
-  estimatedTime: '45-60 min', // Completion time estimate
+  estimatedTime: '90-120 min', // Completion time estimate
   players: '1-4',            // Number of players
   category: 'Easter Egg',    // Guide category
   
@@ -1232,9 +1232,9 @@ export default {
   ],
   
   // Credits (optional)
-  credits: 'Guide by GameGuides. Last updated: December 2025',
+  credits: 'Guide by GameGuides. Last updated: January 2026',
   
   // Version for tracking updates
   version: '1.0',
-  lastUpdated: '2025-12-12'
+  lastUpdated: '2026-01-05'
 };
