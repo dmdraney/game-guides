@@ -7,7 +7,7 @@ export default {
   
   // Visual Customization
   image: null,  // Emoji icon for card
-  coverImage: '/images/bo7z_logo.png',  // Optional: URL to cover image (e.g., '/images/bo7-cover.jpg')
+  coverImage: '/images/aotd.jpg',  // Optional: URL to cover image (e.g., '/images/bo7-cover.jpg')
   
   // Theme Colors (customize per guide)
   theme: {
